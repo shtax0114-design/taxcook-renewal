@@ -1,0 +1,14 @@
+.apply-title-break {
+  display: inline;
+}
+
+@media (max-width: 620px) {
+  .apply-box h2 {
+    font-size: 28px;
+    line-height: 1.34;
+  }
+
+  .apply-title-break {
+    display: block;
+  }
+}
