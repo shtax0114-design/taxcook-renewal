@@ -9,18 +9,18 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-supabase-admin.js"></script>
+    <script defer src="site-renewal-20260501-admin-list-v1.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
       <div class="ops-title-bar admin-real-title">
         <h1>종소세 신청</h1>
-        <label class="admin-search"><span>⌕</span><input type="search" value="김정수" aria-label="검색"></label>
+        <label class="admin-search"><span>검색</span><input type="search" data-admin-search aria-label="검색"></label>
       </div>
       <div class="ops-toolbar admin-real-toolbar">
-        <a class="ops-button" href="application-detail.html?id=GIT-20240502-001">상세 샘플</a>
         <a class="ops-button" href="admin-vatax.html">부가세 신청</a>
         <a class="ops-button" href="members.html">고객 정보 조회</a>
+        <a class="ops-button" href="/">홈으로</a>
       </div>
       <div class="ops-table-wrap">
         <table class="ops-table admin-real-table">
@@ -43,7 +43,6 @@
           <tbody data-admin-real-list data-service="gitax"></tbody>
         </table>
       </div>
-      <div class="admin-pagination" aria-label="페이지 이동"><span>≪</span><span>‹</span><strong>1</strong><span>›</span><span>≫</span></div>
     </main>
   </body>
 </html>

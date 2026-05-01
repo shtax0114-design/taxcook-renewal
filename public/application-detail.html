@@ -9,19 +9,22 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-supabase-detail.js"></script>
+    <script defer src="site-renewal-20260501-admin-detail-v1.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
       <section class="ops-detail-section">
-        <div class="ops-section-title">신청자 정보</div>
+        <div class="ops-section-title">
+          신청자 정보
+          <a class="ops-button" data-list-link href="admin-vatax.html">목록</a>
+        </div>
         <div class="ops-info-strip">
-          <div class="ops-info-item"><strong>신청일자</strong><span data-detail-text="appliedAt"></span></div>
-          <div class="ops-info-item vatax-only"><strong>상호</strong><span data-detail-text="customerName"></span></div>
-          <div class="ops-info-item gitax-only"><strong>신청자명</strong><span data-detail-text="applicantName"></span></div>
-          <div class="ops-info-item"><strong>사업자번호</strong><span data-detail-text="businessNumber"></span></div>
-          <div class="ops-info-item"><strong>휴대폰번호</strong><span data-detail-text="phone"></span></div>
-          <div class="ops-info-item gitax-only"><strong>생년월일</strong><span data-detail-text="birthDate"></span></div>
+          <div class="ops-info-item"><strong>신청일자</strong><span data-detail-text="appliedAt">-</span></div>
+          <div class="ops-info-item"><strong>신청자명</strong><span data-detail-text="customerName">-</span></div>
+          <div class="ops-info-item"><strong>휴대폰번호</strong><span data-detail-text="phone">-</span></div>
+          <div class="ops-info-item"><strong>사업자구분</strong><span data-detail-text="businessType">-</span></div>
+          <div class="ops-info-item"><strong>사업자번호</strong><span data-detail-text="businessNumber">-</span></div>
+          <div class="ops-info-item"><strong>업체명</strong><span data-detail-text="company">-</span></div>
         </div>
       </section>
 
@@ -30,48 +33,57 @@
         <div class="ops-section-title">
           신고처리 정보
           <button class="ops-button" type="submit">저장</button>
-          <a class="ops-button" href="admin-vatax.html">목록</a>
-          <button class="ops-button danger" type="button">삭제</button>
+          <button class="ops-button danger" type="button" data-delete-application>삭제</button>
           <span class="ops-save-message" data-save-message hidden></span>
         </div>
         <div class="ops-form-panel">
           <div class="ops-detail-grid">
-            <div class="ops-field gitax-only"><span class="ops-field-title">사업자구분</span><span class="ops-readonly" data-detail-text="businessType"></span></div>
-            <div class="ops-field gitax-only"><span class="ops-field-title">귀속년도</span><span class="ops-readonly" data-detail-text="taxYear"></span></div>
-            <div class="ops-field vatax-only"><span class="ops-field-title">귀속</span><span class="ops-readonly" data-detail-text="period"></span></div>
-            <label class="ops-field gitax-only">신고유형<select name="reportType"><option>복식부기</option><option>간편장부A</option><option>간편장부B</option><option>단순경비율</option><option>기준경비율</option></select></label>
-            <div class="ops-field vatax-only"><span class="ops-field-title">유형</span><span class="ops-readonly" data-detail-text="type"></span></div>
-            <div class="ops-field"><span class="ops-field-title">할인코드</span><span class="ops-readonly" data-detail-text="couponCode"></span></div>
-            <label class="ops-field">발행세액공제<input type="number" name="creditDeduction"></label>
-            <label class="ops-field">신고담당자<select name="manager"><option value="">신고담당자명</option><option>정원석</option><option>김정수</option></select></label>
-            <label class="ops-field">처리상태<select name="processStatus"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
-
-            <div class="ops-field gitax-only"><span class="ops-field-title">계약금</span><span class="ops-readonly emphasis-red" data-detail-money="depositFee"></span></div>
-            <div class="ops-field"><span class="ops-field-title">기본수수료</span><span class="ops-readonly" data-detail-money="baseFee"></span></div>
-            <div class="ops-field"><span class="ops-field-title">할인금액</span><span class="ops-readonly" data-detail-money="discountAmount"></span></div>
-            <div class="ops-field"><span class="ops-field-title">합계금액 (공급대가)</span><span class="ops-readonly" data-detail-money="supplyAmount"></span></div>
-            <label class="ops-field vatax-only">추가결제 유형<select name="extraPaymentType"><option>추가결제선택</option><option>기타</option><option>기한 후 신고</option><option>사업장 추가</option></select></label>
-            <label class="ops-field">추가결제 상태<select name="extraPaymentStatus"><option>추가결제선택</option><option>요청전</option><option>요청완료</option><option>결제완료</option></select></label>
-            <label class="ops-field vatax-only">추가결제 금액<input type="number" name="extraPaymentAmount"></label>
-            <label class="ops-field gitax-only">소득추가<select name="incomeExtraType"><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="ops-field gitax-only">소득추가 금액<input type="number" name="incomeExtraAmount"></label>
-            <label class="ops-field gitax-only">사업추가<select name="businessExtraType"><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="ops-field gitax-only">사업추가 금액<input type="number" name="businessExtraAmount"></label>
-            <label class="ops-field gitax-only">기타<select name="etcExtraType"><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="ops-field gitax-only">기타 금액<input type="number" name="etcExtraAmount"></label>
-            <label class="ops-field gitax-only">세액공제감면<input type="number" name="taxReduction"></label>
-
-            <div class="ops-field"><span class="ops-field-title">최종수수료</span><span class="ops-readonly" data-detail-money="finalFee"></span></div>
-            <div class="ops-field gitax-only"><span class="ops-field-title">부가세</span><span class="ops-readonly" data-detail-money="vatAmount"></span></div>
-            <div class="ops-field gitax-only"><span class="ops-field-title">합계금액</span><span class="ops-readonly" data-detail-money="totalAmount"></span></div>
-            <div class="ops-field"><span class="ops-field-title">결제상태</span><span class="ops-status-pill" data-detail-text="paymentStatus"></span></div>
+            <div class="ops-field"><span class="ops-field-title">서비스</span><span class="ops-readonly" data-detail-text="serviceLabel">-</span></div>
+            <div class="ops-field"><span class="ops-field-title">귀속</span><span class="ops-readonly" data-detail-text="period">-</span></div>
+            <div class="ops-field"><span class="ops-field-title">신고유형</span><span class="ops-readonly" data-detail-text="type">-</span></div>
+            <div class="ops-field"><span class="ops-field-title">쿠폰</span><span class="ops-readonly" data-detail-text="couponCode">-</span></div>
+            <label class="ops-field">담당자<input type="text" name="manager" placeholder="담당자명"></label>
             <label class="ops-field">신고일자<input type="date" name="reportDate"></label>
-            <label class="ops-field gitax-only">산출세액<input type="number" name="calculatedTax"></label>
-            <label class="ops-field gitax-only">기납부세액<input type="number" name="prepaidTax"></label>
-            <label class="ops-field vatax-only">납부금액<input type="number" name="paymentDue"></label>
-            <label class="ops-field gitax-only">최종 납부세액<input type="number" name="finalTaxDue"></label>
+
+            <label class="ops-field">처리상태<select name="processStatus">
+              <option>신청 접수 및 계약금 결제</option>
+              <option>신고유형 검토 및 결제</option>
+              <option>신고서 작성</option>
+              <option>추가결제 및 최종완료</option>
+              <option>신고 접수 완료</option>
+            </select></label>
+            <label class="ops-field">결제상태<select name="paymentStatus">
+              <option>결제 대기</option>
+              <option>결제 요청</option>
+              <option>결제 완료</option>
+              <option>추가결제 대기</option>
+              <option>환불 완료</option>
+              <option>취소</option>
+            </select></label>
+            <label class="ops-field">납부(환급)내역<input type="text" name="paymentSummary" placeholder="My 택스쿡 표에 표시"></label>
+            <label class="ops-field">최종결제금액<input type="number" name="finalPaymentAmount" min="0"></label>
+            <label class="ops-field">납부금액<input type="number" name="paymentDue" min="0"></label>
+            <label class="ops-field">최종 납부세액<input type="number" name="finalTaxDue" min="0"></label>
+
+            <label class="ops-field">추가결제 항목<select name="extraPaymentType">
+              <option value="">선택</option>
+              <option>소득추가</option>
+              <option>사업추가</option>
+              <option>기타</option>
+              <option>기한 후 신고</option>
+            </select></label>
+            <label class="ops-field">추가결제 상태<select name="extraPaymentStatus">
+              <option value="">선택</option>
+              <option>요청 전</option>
+              <option>요청 완료</option>
+              <option>결제 완료</option>
+            </select></label>
+            <label class="ops-field">추가결제 금액<input type="number" name="extraPaymentAmount" min="0"></label>
+            <label class="ops-field">계산세액<input type="number" name="calculatedTax" min="0"></label>
+            <label class="ops-field">기납부세액<input type="number" name="prepaidTax" min="0"></label>
             <label class="ops-field">납부서전달<span class="ops-checkbox-line"><input type="checkbox" name="beforeDeadline"> 전달완료</span></label>
           </div>
+
           <div class="ops-detail-grid">
             <label class="ops-field wide">고객 안내 메모<textarea name="customerMemo" placeholder="고객 My 택스쿡에 표시됩니다."></textarea></label>
             <label class="ops-field wide">관리자 내부 메모<textarea name="adminMemo" placeholder="관리자만 볼 수 있습니다."></textarea></label>
@@ -80,17 +92,14 @@
       </form>
 
       <section class="ops-detail-section">
-        <div class="ops-section-title">
-          선결제 정보
-          <button class="ops-button danger" type="button">결제취소</button>
-        </div>
+        <div class="ops-section-title">선결제 정보</div>
         <div class="prepay-panel">
           <div class="prepay-grid">
-            <div class="prepay-item"><strong>은행</strong><span data-detail-text="bankName"></span></div>
-            <div class="prepay-item"><strong>결제금액</strong><span data-detail-money="paidAmount"></span></div>
+            <div class="prepay-item"><strong>은행</strong><span data-detail-text="bankName">-</span></div>
+            <div class="prepay-item"><strong>결제금액</strong><span data-detail-money="paidAmount">-</span></div>
             <div class="prepay-item receipt-cell"><strong>매출전표</strong><button class="ops-button" type="button" data-receipt-open>보기</button></div>
-            <div class="prepay-item"><strong>결제상태</strong><span class="ops-status-pill success" data-detail-text="paymentStatus"></span></div>
-            <div class="prepay-item wide"><strong>주문상품</strong><span data-detail-text="orderName"></span></div>
+            <div class="prepay-item"><strong>결제상태</strong><span class="ops-status-pill success" data-detail-text="paymentStatus">-</span></div>
+            <div class="prepay-item wide"><strong>주문상품</strong><span data-detail-text="orderName">-</span></div>
           </div>
         </div>
       </section>
