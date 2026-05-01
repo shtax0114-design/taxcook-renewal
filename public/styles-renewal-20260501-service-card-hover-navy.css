@@ -1,0 +1,18 @@
+@media (hover: hover) and (pointer: fine) {
+  .services .svc-card:hover {
+    border-color: var(--navy) !important;
+    background:
+      radial-gradient(circle at 22% 26%, rgba(80, 120, 205, 0.24) 0%, rgba(80, 120, 205, 0) 38%),
+      linear-gradient(135deg, #071d51 0%, #0b2560 100%) !important;
+  }
+
+  .services .svc-card:hover h3,
+  .services .svc-card:hover p {
+    color: #fff !important;
+  }
+
+  .services .svc-card:hover > .svc-icon {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+}
