@@ -6,7 +6,7 @@ create table if not exists public.profiles (
   birth text,
   business_type text,
   biz_number text,
-  role text not null default 'customer' check (role in ('customer', 'admin')),
+  role text not null default 'customer' check (role in ('customer', 'admin', 'developer')),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -86,7 +86,7 @@ as $$
     select 1
     from public.profiles
     where id = auth.uid()
-      and role = 'admin'
+      and role in ('admin', 'developer')
   );
 $$;
 
