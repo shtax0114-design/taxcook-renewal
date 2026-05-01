@@ -1,0 +1,9 @@
+.gitax-process-panel .gitax-extra-select-cell {
+  transform: translateY(-18px);
+}
+
+.gitax-process-panel .gitax-extra-select-cell .sr-only {
+  min-height: 0;
+  height: 0;
+  margin: 0;
+}
