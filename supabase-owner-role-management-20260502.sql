@@ -83,6 +83,7 @@ grant execute on function public.owner_update_profile_role(uuid, text, text) to 
 
 -- Tighten direct profile updates so admins cannot bypass the owner password for role changes.
 drop policy if exists "profiles_update_own_or_admin" on public.profiles;
+drop policy if exists "profiles_update_own" on public.profiles;
 create policy "profiles_update_own"
 on public.profiles for update
 using (auth.uid() = id)
