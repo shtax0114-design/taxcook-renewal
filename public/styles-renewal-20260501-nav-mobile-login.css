@@ -1,0 +1,34 @@
+.site-header .nav {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.site-header .nav a,
+.site-header .nav a[aria-current="page"] {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.mobile-login-cta {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .site-header .nav,
+  .site-header .nav a,
+  .site-header .nav a[aria-current="page"] {
+    font-size: 15px;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 920px) {
+  .header-actions > .nav-cta:not(.mobile-login-cta) {
+    display: none;
+  }
+
+  .header-actions .mobile-login-cta {
+    display: inline-flex;
+  }
+}
