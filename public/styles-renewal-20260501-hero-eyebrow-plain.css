@@ -1,0 +1,18 @@
+.hero-eyebrow {
+  display: block !important;
+  width: auto !important;
+  min-height: 0 !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: left !important;
+}
+
+@media (max-width: 620px) {
+  .hero-eyebrow {
+    display: none !important;
+  }
+}
