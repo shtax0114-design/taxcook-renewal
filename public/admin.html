@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>통합 관리자 | 택스쿡</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles-renewal-20260501-admin-clean.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-admin-dashboard-v1.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="site-renewal-20260501-supabase-config.js"></script>
+    <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
+    <script defer src="site-renewal-20260501-admin-dashboard-v1.js"></script>
+  </head>
+  <body class="ops-admin-page">
+    <main class="ops-main">
+      <div class="ops-title-bar admin-real-title">
+        <h1>통합 관리자</h1>
+        <label class="admin-search"><span>검색</span><input type="search" data-admin-search aria-label="검색"></label>
+      </div>
+
+      <div class="ops-toolbar admin-real-toolbar admin-dashboard-toolbar">
+        <button class="ops-button active" type="button" data-admin-tab="applications">전체 신청</button>
+        <button class="ops-button" type="button" data-admin-tab="members">회원정보</button>
+        <a class="ops-button" href="admin-vatax.html">부가세만</a>
+        <a class="ops-button" href="admin-gitax.html">종소세만</a>
+        <a class="ops-button" href="/">홈으로</a>
+        <select class="admin-filter" data-service-filter aria-label="서비스 필터">
+          <option value="">전체 서비스</option>
+          <option value="vatax">부가세</option>
+          <option value="gitax">종소세</option>
+        </select>
+        <select class="admin-filter" data-process-filter aria-label="처리상태 필터">
+          <option value="">전체 처리상태</option>
+          <option>신청 접수</option>
+          <option>신청 접수 및 계약금 결제</option>
+          <option>신고유형 검토 및 결제</option>
+          <option>신고서 작성</option>
+          <option>추가결제 및 최종완료</option>
+          <option>신고 접수 완료</option>
+        </select>
+      </div>
+
+      <section data-admin-panel="applications">
+        <div class="ops-table-wrap">
+          <table class="ops-table admin-real-table">
+            <thead>
+              <tr>
+                <th>신청내용</th>
+                <th>고객/업체</th>
+                <th>사업자구분</th>
+                <th>신고유형</th>
+                <th>처리상태</th>
+                <th>결제상태</th>
+                <th>납부서</th>
+                <th>최종결제금액</th>
+                <th>담당자</th>
+                <th>휴대폰번호</th>
+                <th>최종수정자</th>
+                <th>변경일시</th>
+              </tr>
+            </thead>
+            <tbody data-admin-all-list></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-admin-panel="members" hidden>
+        <div class="ops-table-wrap">
+          <table class="ops-table member-admin-table">
+            <thead>
+              <tr>
+                <th>권한</th>
+                <th>이메일</th>
+                <th>이름</th>
+                <th>휴대폰번호</th>
+                <th>사업자구분</th>
+                <th>사업자번호</th>
+                <th>가입일</th>
+                <th>최종수정일</th>
+              </tr>
+            </thead>
+            <tbody data-admin-members-list></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
