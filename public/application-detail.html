@@ -6,11 +6,11 @@
     <title>신청 상세 | 택스쿡</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles-renewal-20260501-payment-info.css">
-    <link rel="stylesheet" href="styles-renewal-20260501-admin-detail-legacy-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-admin-detail-legacy-v2.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-admin-detail-v2.js"></script>
+    <script defer src="site-renewal-20260501-admin-detail-v3.js"></script>
   </head>
   <body class="ops-admin-page legacy-detail-page">
     <main class="ops-main legacy-detail-main">
@@ -95,10 +95,9 @@
               <span class="sr-only">추가결제 항목</span>
               <select name="extraPaymentType">
                 <option value="">추가결제선택</option>
-                <option>소득추가</option>
-                <option>사업추가</option>
+                <option>미등록카드추가</option>
+                <option>온라인매출</option>
                 <option>기타</option>
-                <option>기한 후 신고</option>
               </select>
             </label>
             <label class="legacy-field">
@@ -123,16 +122,16 @@
             </label>
             <label class="legacy-field">
               <span class="sr-only">추가결제 상태</span>
-              <select name="extraPaymentStatus">
+              <select name="businessExtraType">
                 <option value="">추가결제선택</option>
-                <option>요청 전</option>
-                <option>요청 완료</option>
-                <option>결제 완료</option>
+                <option>미등록카드추가</option>
+                <option>온라인매출</option>
+                <option>기타</option>
               </select>
             </label>
             <label class="legacy-field">
-              <span class="sr-only">최종 세액</span>
-              <input type="number" name="finalTaxDue" min="0" placeholder="금액">
+              <span class="sr-only">추가결제 금액</span>
+              <input type="number" name="businessExtraAmount" min="0" placeholder="금액">
             </label>
             <label class="legacy-check-field">
               <span>납부서전달</span>
@@ -144,28 +143,24 @@
             <label class="legacy-field">
               <span>처리상태</span>
               <select name="processStatus">
-                <option>신청 접수</option>
-                <option>신청 접수 및 계약금 결제</option>
-                <option>신고유형 검토 및 결제</option>
-                <option>신고서 작성</option>
-                <option>추가결제 및 최종완료</option>
-                <option>신고 접수 완료</option>
+                <option>신고접수 및 유형수수료 결제완료</option>
+                <option>자료검토 및 신고서작성</option>
+                <option>추가옵션결제</option>
+                <option>신고접수완료</option>
               </select>
             </label>
             <label class="legacy-field">
-              <span class="sr-only">결제상태</span>
-              <select name="paymentStatus">
-                <option>결제 대기</option>
-                <option>결제 요청</option>
-                <option>결제 완료</option>
-                <option>추가결제 대기</option>
-                <option>환불 완료</option>
-                <option>취소</option>
+              <span class="sr-only">추가결제 항목</span>
+              <select name="etcExtraType">
+                <option value="">추가결제선택</option>
+                <option>미등록카드추가</option>
+                <option>온라인매출</option>
+                <option>기타</option>
               </select>
             </label>
             <label class="legacy-field">
-              <span class="sr-only">최종결제금액</span>
-              <input type="number" name="finalPaymentAmount" min="0" placeholder="금액">
+              <span class="sr-only">추가결제 금액</span>
+              <input type="number" name="etcExtraAmount" min="0" placeholder="금액">
             </label>
           </div>
 
