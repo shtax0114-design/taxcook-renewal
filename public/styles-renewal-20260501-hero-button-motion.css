@@ -1,0 +1,33 @@
+@keyframes heroButtonPulseIn {
+  0% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-actions.motion-visible .btn-main,
+.hero-actions.motion-visible .btn-ghost {
+  animation: heroButtonPulseIn 1.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-actions.motion-visible .btn-ghost:nth-child(2) {
+  animation-delay: 0.28s;
+}
+
+.hero-actions.motion-visible .btn-ghost:nth-child(3) {
+  animation-delay: 0.56s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions.motion-visible .btn-main,
+  .hero-actions.motion-visible .btn-ghost {
+    animation: none;
+  }
+}
