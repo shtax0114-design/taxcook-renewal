@@ -1,0 +1,45 @@
+.subpage .sub-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(83, 234, 207, 0.16), transparent 34%),
+    linear-gradient(135deg, #061844 0%, #08245f 58%, #0a2f78 100%);
+  color: #d9e3f1;
+}
+
+.subpage .sub-hero .section-eyebrow {
+  color: #77ead7;
+}
+
+.subpage .sub-hero h1 {
+  color: #eef4fb;
+}
+
+.subpage .sub-hero p:not(.section-eyebrow) {
+  color: #c8d5e6;
+}
+
+.subpage .sub-hero .deposit-notice {
+  background: #f5f1e9;
+  border-color: rgba(235, 222, 200, 0.92);
+  color: #071d51;
+}
+
+.subpage .sub-hero .deposit-notice p {
+  color: #294268;
+}
+
+.subpage .sub-hero .apply-shortcut {
+  background: #64f0db;
+  border-color: #64f0db;
+  color: #061844;
+}
+
+.subpage .sub-hero .apply-shortcut:hover,
+.subpage .sub-hero .apply-shortcut:focus,
+.subpage .sub-hero .apply-shortcut:active,
+.subpage .sub-hero .apply-shortcut:visited {
+  color: #061844;
+}
+
+.subpage .sub-hero .apply-shortcut:focus-visible {
+  outline-color: rgba(100, 240, 219, 0.6);
+}
