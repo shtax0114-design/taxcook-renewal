@@ -1,0 +1,5 @@
+@media (max-width: 920px) {
+  .hero-trust {
+    display: none !important;
+  }
+}
