@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="styles-renewal-20260501-admin-dashboard-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-search-horizontal.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-popup-manager.css">
-    <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters-v3.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters-v4.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260502-admin-dashboard-popup-v7.js"></script>
+    <script defer src="site-renewal-20260502-admin-dashboard-popup-v8.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
@@ -43,7 +43,7 @@
           <div class="admin-dropdown">
             <button type="button" data-admin-tab="popups"><span class="admin-menu-icon">▣</span>메인 팝업</button>
             <button type="button" data-admin-tab="discounts"><span class="admin-menu-icon">▣</span>할인코드 관리</button>
-            <button type="button" data-admin-tab="members"><span class="admin-menu-icon">▱</span>권한 관리</button>
+            <button type="button" data-admin-tab="members" data-permission-mode="true"><span class="admin-menu-icon">▱</span>권한 관리</button>
           </div>
         </div>
         <button class="admin-menu-link" type="button" data-admin-logout>로그아웃</button>
@@ -100,6 +100,16 @@
       <div class="column-filter-panel" data-column-filter-panel hidden></div>
 
       <section data-admin-panel="members" hidden>
+        <div class="permission-guard" data-permission-guard hidden>
+          <form class="permission-guard-form" data-permission-form>
+            <label>
+              <span>대표 비밀번호</span>
+              <input type="password" name="ownerPasscode" autocomplete="current-password" required>
+            </label>
+            <button type="submit">확인</button>
+            <p data-permission-message hidden></p>
+          </form>
+        </div>
         <div class="ops-table-wrap">
           <table class="ops-table member-admin-table">
             <thead>
