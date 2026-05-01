@@ -1,0 +1,5 @@
+@media (min-width: 921px) {
+  .services .svc-card > .svc-icon img[src*="icon-service-gitax"] {
+    transform: translateX(-3px);
+  }
+}
