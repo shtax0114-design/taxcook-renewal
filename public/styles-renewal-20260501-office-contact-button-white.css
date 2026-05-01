@@ -1,0 +1,13 @@
+.office-hero-actions .btn-ghost {
+  background: #ffffff;
+  color: #061f5c;
+  border-color: rgba(6, 31, 92, 0.18);
+  box-shadow: none;
+}
+
+.office-hero-actions .btn-ghost:hover,
+.office-hero-actions .btn-ghost:focus-visible {
+  background: #ffffff;
+  color: #061f5c;
+  border-color: rgba(6, 31, 92, 0.34);
+}
