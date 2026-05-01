@@ -13,6 +13,9 @@ create table if not exists public.homepage_popups (
 
 alter table public.homepage_popups enable row level security;
 
+grant select on public.homepage_popups to anon;
+grant select, insert, update, delete on public.homepage_popups to authenticated;
+
 drop trigger if exists homepage_popups_set_updated_at on public.homepage_popups;
 create trigger homepage_popups_set_updated_at
 before update on public.homepage_popups
