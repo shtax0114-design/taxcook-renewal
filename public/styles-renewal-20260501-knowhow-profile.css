@@ -34,7 +34,7 @@
 .bi-copy h1 {
   margin: 14px 0 22px;
   color: #020817;
-  font-size: clamp(36px, 4.8vw, 58px);
+  font-size: clamp(32px, 4.1vw, 48px);
   font-weight: 900;
   line-height: 1.36;
 }
@@ -223,7 +223,7 @@
   }
 
   .bi-copy h1 {
-    font-size: 31px;
+    font-size: 28px;
   }
 
   .bi-meaning {
