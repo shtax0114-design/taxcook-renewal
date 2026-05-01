@@ -1,0 +1,10 @@
+@media (hover: hover) and (pointer: fine) {
+  .services .svc-card:hover > .svc-icon img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.services .svc-card:active > .svc-icon img,
+.services .svc-card.is-pressed > .svc-icon img {
+  filter: brightness(0) invert(1);
+}
