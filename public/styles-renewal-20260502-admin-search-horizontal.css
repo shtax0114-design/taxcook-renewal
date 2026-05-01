@@ -1,0 +1,16 @@
+.admin-search {
+  min-width: 312px;
+}
+
+.admin-search span {
+  flex: 0 0 48px;
+  width: 48px;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.admin-search input {
+  min-width: 0;
+}
