@@ -1,0 +1,99 @@
+.legacy-section {
+  margin-top: 6px;
+}
+
+.legacy-section-title {
+  min-height: 28px;
+}
+
+.legacy-applicant-strip {
+  min-height: 40px;
+  margin-top: 5px;
+}
+
+.legacy-info-cell {
+  min-height: 36px;
+  padding: 0 18px;
+}
+
+.legacy-process-panel,
+.gitax-process-panel {
+  margin-top: 6px;
+  padding: 9px 18px 10px;
+}
+
+.legacy-process-panel {
+  gap: 8px 28px;
+}
+
+.gitax-process-panel {
+  row-gap: 6px;
+}
+
+.legacy-col {
+  gap: 9px;
+}
+
+.legacy-col:not(.readonly-col) {
+  gap: 5px;
+}
+
+.legacy-read-item,
+.gitax-cell,
+.gitax-process-panel .legacy-read-item {
+  min-height: 54px;
+}
+
+.legacy-read-item strong {
+  margin-bottom: 5px;
+}
+
+.legacy-field,
+.legacy-check-field {
+  gap: 3px;
+}
+
+.legacy-field > span,
+.gitax-process-panel .legacy-read-item strong,
+.gitax-process-panel .legacy-field > span,
+.gitax-process-panel .legacy-check-field > span {
+  min-height: 16px;
+  margin-bottom: 2px;
+}
+
+.legacy-field input,
+.legacy-field select,
+.legacy-field textarea,
+.gitax-process-panel .legacy-field input,
+.gitax-process-panel .legacy-field select {
+  min-height: 34px;
+  border-radius: 7px;
+}
+
+.legacy-field textarea {
+  min-height: 78px;
+  padding: 8px 10px;
+}
+
+.memo-field textarea {
+  min-height: 78px;
+}
+
+.legacy-check-field {
+  min-height: 34px;
+  margin-top: 8px;
+}
+
+.gitax-process-panel .legacy-check-field {
+  padding-top: 16px;
+}
+
+.legacy-prepay-strip {
+  min-height: 66px;
+  margin-top: 6px;
+}
+
+.gitax-prepay {
+  row-gap: 5px;
+  min-height: 92px;
+}
