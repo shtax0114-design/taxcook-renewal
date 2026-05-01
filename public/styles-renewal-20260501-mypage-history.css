@@ -1,0 +1,127 @@
+.auth-submit:disabled,
+.mypage-logout:disabled {
+  cursor: progress;
+  opacity: 0.68;
+}
+
+.auth-helper {
+  width: min(440px, 100%);
+  margin: 12px auto 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mypage-topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.mypage-profile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.mypage-profile div {
+  border: 1px solid #dce6f5;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(16, 54, 125, 0.06);
+}
+
+.mypage-profile dt {
+  margin-bottom: 6px;
+  color: #60708a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mypage-profile dd {
+  margin: 0;
+  color: #071d51;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.mypage-logout {
+  min-height: 42px;
+  border: 1px solid #d7e1ef;
+  border-radius: 10px;
+  background: #fff;
+  color: #10367d;
+  padding: 0 16px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.mypage-logout:hover {
+  border-color: #10367d;
+}
+
+.mypage-table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.mypage-table th,
+.mypage-table td {
+  height: auto;
+  min-height: 48px;
+  padding: 14px 12px;
+  white-space: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mypage-table th {
+  background: #3f92ed;
+  color: #fff;
+  font-weight: 900;
+}
+
+.mypage-table th:nth-child(1),
+.mypage-table td:nth-child(1) {
+  width: 16%;
+}
+
+.mypage-table th:nth-child(2),
+.mypage-table td:nth-child(2),
+.mypage-table th:nth-child(3),
+.mypage-table td:nth-child(3) {
+  width: 16%;
+}
+
+.mypage-table th:nth-child(4),
+.mypage-table td:nth-child(4) {
+  width: 22%;
+}
+
+.mypage-table th:nth-child(5),
+.mypage-table td:nth-child(5) {
+  width: 30%;
+}
+
+@media (max-width: 820px) {
+  .mypage-topbar,
+  .mypage-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .mypage-logout {
+    width: 100%;
+  }
+
+  .mypage-card {
+    overflow-x: auto;
+  }
+
+  .mypage-table {
+    min-width: 760px;
+  }
+}
