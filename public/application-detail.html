@@ -10,7 +10,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-admin-detail-v4.js"></script>
+    <script defer src="site-renewal-20260501-admin-detail-v5.js"></script>
   </head>
   <body class="ops-admin-page legacy-detail-page">
     <main class="ops-main legacy-detail-main">
@@ -93,7 +93,7 @@
             </label>
             <label class="legacy-field">
               <span class="sr-only">추가결제 항목</span>
-              <select name="extraPaymentType">
+              <select name="extraPaymentType" data-fixed-options>
                 <option value="">추가결제선택</option>
                 <option>미등록카드추가</option>
                 <option>온라인매출</option>
@@ -122,7 +122,7 @@
             </label>
             <label class="legacy-field">
               <span class="sr-only">추가결제 상태</span>
-              <select name="businessExtraType">
+              <select name="businessExtraType" data-fixed-options>
                 <option value="">추가결제선택</option>
                 <option>미등록카드추가</option>
                 <option>온라인매출</option>
@@ -142,7 +142,7 @@
           <div class="legacy-col">
             <label class="legacy-field">
               <span>처리상태</span>
-              <select name="processStatus">
+              <select name="processStatus" data-fixed-options data-default-option="신고접수 및 유형수수료 결제완료">
                 <option>신고접수 및 유형수수료 결제완료</option>
                 <option>자료검토 및 신고서작성</option>
                 <option>추가옵션결제</option>
@@ -151,7 +151,7 @@
             </label>
             <label class="legacy-field">
               <span class="sr-only">추가결제 항목</span>
-              <select name="etcExtraType">
+              <select name="etcExtraType" data-fixed-options>
                 <option value="">추가결제선택</option>
                 <option>미등록카드추가</option>
                 <option>온라인매출</option>
