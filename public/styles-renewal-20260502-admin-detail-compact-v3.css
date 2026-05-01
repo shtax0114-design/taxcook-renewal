@@ -1,0 +1,13 @@
+.gitax-process-panel .gitax-stack-top-cell select {
+  transform: translateY(66px);
+}
+
+.gitax-process-panel .gitax-extra-select-cell {
+  transform: translateY(34px);
+}
+
+.gitax-process-panel .gitax-extra-select-cell .sr-only {
+  min-height: 0;
+  height: 0;
+  margin: 0;
+}
