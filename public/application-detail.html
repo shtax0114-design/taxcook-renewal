@@ -6,101 +6,193 @@
     <title>신청 상세 | 택스쿡</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles-renewal-20260501-payment-info.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-admin-detail-legacy-v1.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-admin-detail-v1.js"></script>
+    <script defer src="site-renewal-20260501-admin-detail-v2.js"></script>
   </head>
-  <body class="ops-admin-page">
-    <main class="ops-main">
-      <section class="ops-detail-section">
-        <div class="ops-section-title">
-          신청자 정보
-          <a class="ops-button" data-list-link href="admin-vatax.html">목록</a>
+  <body class="ops-admin-page legacy-detail-page">
+    <main class="ops-main legacy-detail-main">
+      <section class="legacy-section">
+        <div class="legacy-section-title">
+          <span>신청자 정보</span>
+          <a class="legacy-button subtle" data-list-link href="admin.html">목록</a>
         </div>
-        <div class="ops-info-strip">
-          <div class="ops-info-item"><strong>신청일자</strong><span data-detail-text="appliedAt">-</span></div>
-          <div class="ops-info-item"><strong>신청자명</strong><span data-detail-text="customerName">-</span></div>
-          <div class="ops-info-item"><strong>휴대폰번호</strong><span data-detail-text="phone">-</span></div>
-          <div class="ops-info-item"><strong>사업자구분</strong><span data-detail-text="businessType">-</span></div>
-          <div class="ops-info-item"><strong>사업자번호</strong><span data-detail-text="businessNumber">-</span></div>
-          <div class="ops-info-item"><strong>업체명</strong><span data-detail-text="company">-</span></div>
+        <div class="legacy-applicant-strip">
+          <div class="legacy-info-cell"><strong>신청일자</strong><span data-detail-text="appliedAt">-</span></div>
+          <div class="legacy-info-cell"><strong>상호</strong><span data-detail-text="company">-</span></div>
+          <div class="legacy-info-cell"><strong>사업자번호</strong><span data-detail-text="businessNumber">-</span></div>
+          <div class="legacy-info-cell"><strong>휴대폰번호</strong><span data-detail-text="phone">-</span></div>
         </div>
       </section>
 
-      <form class="ops-detail-section" data-application-detail>
+      <form class="legacy-section" data-application-detail>
         <input type="hidden" name="id">
-        <div class="ops-section-title">
-          신고처리 정보
-          <button class="ops-button" type="submit">저장</button>
-          <button class="ops-button danger" type="button" data-delete-application>삭제</button>
-          <span class="ops-save-message" data-save-message hidden></span>
+        <div class="legacy-section-title action-title">
+          <span>신고처리 정보</span>
+          <button class="legacy-button" type="button" data-edit-application>수정</button>
+          <button class="legacy-button" type="submit">저장</button>
+          <button class="legacy-button danger" type="button" data-delete-application>삭제</button>
+          <span class="legacy-save-message" data-save-message hidden></span>
         </div>
-        <div class="ops-form-panel">
-          <div class="ops-detail-grid">
-            <div class="ops-field"><span class="ops-field-title">서비스</span><span class="ops-readonly" data-detail-text="serviceLabel">-</span></div>
-            <div class="ops-field"><span class="ops-field-title">귀속</span><span class="ops-readonly" data-detail-text="period">-</span></div>
-            <div class="ops-field"><span class="ops-field-title">신고유형</span><span class="ops-readonly" data-detail-text="type">-</span></div>
-            <div class="ops-field"><span class="ops-field-title">쿠폰</span><span class="ops-readonly" data-detail-text="couponCode">-</span></div>
-            <label class="ops-field">담당자<input type="text" name="manager" placeholder="담당자명"></label>
-            <label class="ops-field">신고일자<input type="date" name="reportDate"></label>
 
-            <label class="ops-field">처리상태<select name="processStatus">
-              <option>신청 접수 및 계약금 결제</option>
-              <option>신고유형 검토 및 결제</option>
-              <option>신고서 작성</option>
-              <option>추가결제 및 최종완료</option>
-              <option>신고 접수 완료</option>
-            </select></label>
-            <label class="ops-field">결제상태<select name="paymentStatus">
-              <option>결제 대기</option>
-              <option>결제 요청</option>
-              <option>결제 완료</option>
-              <option>추가결제 대기</option>
-              <option>환불 완료</option>
-              <option>취소</option>
-            </select></label>
-            <label class="ops-field">납부(환급)내역<input type="text" name="paymentSummary" placeholder="My 택스쿡 표에 표시"></label>
-            <label class="ops-field">최종결제금액<input type="number" name="finalPaymentAmount" min="0"></label>
-            <label class="ops-field">납부금액<input type="number" name="paymentDue" min="0"></label>
-            <label class="ops-field">최종 납부세액<input type="number" name="finalTaxDue" min="0"></label>
-
-            <label class="ops-field">추가결제 항목<select name="extraPaymentType">
-              <option value="">선택</option>
-              <option>소득추가</option>
-              <option>사업추가</option>
-              <option>기타</option>
-              <option>기한 후 신고</option>
-            </select></label>
-            <label class="ops-field">추가결제 상태<select name="extraPaymentStatus">
-              <option value="">선택</option>
-              <option>요청 전</option>
-              <option>요청 완료</option>
-              <option>결제 완료</option>
-            </select></label>
-            <label class="ops-field">추가결제 금액<input type="number" name="extraPaymentAmount" min="0"></label>
-            <label class="ops-field">계산세액<input type="number" name="calculatedTax" min="0"></label>
-            <label class="ops-field">기납부세액<input type="number" name="prepaidTax" min="0"></label>
-            <label class="ops-field">납부서전달<span class="ops-checkbox-line"><input type="checkbox" name="beforeDeadline"> 전달완료</span></label>
+        <div class="legacy-process-panel">
+          <div class="legacy-col readonly-col">
+            <div class="legacy-read-item">
+              <strong>귀속</strong>
+              <span data-detail-text="period">-</span>
+            </div>
+            <div class="legacy-read-item">
+              <strong>기본수수료</strong>
+              <span data-detail-money="baseFee">-</span>
+            </div>
+            <div class="legacy-read-item">
+              <strong>최종수수료</strong>
+              <span data-detail-money="finalPaymentAmount">-</span>
+            </div>
+            <div class="legacy-read-item memo-label">
+              <strong>비고_특이사항</strong>
+            </div>
           </div>
 
-          <div class="ops-detail-grid">
-            <label class="ops-field wide">고객 안내 메모<textarea name="customerMemo" placeholder="고객 My 택스쿡에 표시됩니다."></textarea></label>
-            <label class="ops-field wide">관리자 내부 메모<textarea name="adminMemo" placeholder="관리자만 볼 수 있습니다."></textarea></label>
+          <div class="legacy-col readonly-col">
+            <div class="legacy-read-item">
+              <strong>유형</strong>
+              <span data-detail-text="type">-</span>
+            </div>
+            <div class="legacy-read-item">
+              <strong>할인금액</strong>
+              <span data-detail-money="discountAmount">-</span>
+            </div>
+            <div class="legacy-read-item">
+              <strong>결제상태</strong>
+              <span class="legacy-status-pill" data-detail-text="paymentStatus">-</span>
+            </div>
+          </div>
+
+          <div class="legacy-col">
+            <div class="legacy-read-item">
+              <strong>할인코드</strong>
+              <span data-detail-text="couponCode">-</span>
+            </div>
+            <div class="legacy-read-item">
+              <strong>합계금액 (공급대가)</strong>
+              <span data-detail-money="supplyAmount">-</span>
+            </div>
+            <label class="legacy-field">
+              <span>신고일자</span>
+              <input type="date" name="reportDate">
+            </label>
+          </div>
+
+          <div class="legacy-col">
+            <label class="legacy-field">
+              <span>발행세액공제</span>
+              <input type="number" name="creditDeduction" min="0" placeholder="금액">
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">추가결제 항목</span>
+              <select name="extraPaymentType">
+                <option value="">추가결제선택</option>
+                <option>소득추가</option>
+                <option>사업추가</option>
+                <option>기타</option>
+                <option>기한 후 신고</option>
+              </select>
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">추가결제 금액</span>
+              <input type="number" name="extraPaymentAmount" min="0" placeholder="금액">
+            </label>
+            <label class="legacy-field">
+              <span>납부금액</span>
+              <input type="number" name="paymentDue" min="0" placeholder="납부금액">
+            </label>
+          </div>
+
+          <div class="legacy-col">
+            <label class="legacy-field">
+              <span>신고담당자</span>
+              <select name="manager">
+                <option value="">신고담당자명</option>
+                <option>신현찬</option>
+                <option>노채운</option>
+                <option>담당자 배정 대기</option>
+              </select>
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">추가결제 상태</span>
+              <select name="extraPaymentStatus">
+                <option value="">추가결제선택</option>
+                <option>요청 전</option>
+                <option>요청 완료</option>
+                <option>결제 완료</option>
+              </select>
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">최종 세액</span>
+              <input type="number" name="finalTaxDue" min="0" placeholder="금액">
+            </label>
+            <label class="legacy-check-field">
+              <span>납부서전달</span>
+              <input type="checkbox" name="beforeDeadline">
+            </label>
+          </div>
+
+          <div class="legacy-col">
+            <label class="legacy-field">
+              <span>처리상태</span>
+              <select name="processStatus">
+                <option>신청 접수</option>
+                <option>신청 접수 및 계약금 결제</option>
+                <option>신고유형 검토 및 결제</option>
+                <option>신고서 작성</option>
+                <option>추가결제 및 최종완료</option>
+                <option>신고 접수 완료</option>
+              </select>
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">결제상태</span>
+              <select name="paymentStatus">
+                <option>결제 대기</option>
+                <option>결제 요청</option>
+                <option>결제 완료</option>
+                <option>추가결제 대기</option>
+                <option>환불 완료</option>
+                <option>취소</option>
+              </select>
+            </label>
+            <label class="legacy-field">
+              <span class="sr-only">최종결제금액</span>
+              <input type="number" name="finalPaymentAmount" min="0" placeholder="금액">
+            </label>
+          </div>
+
+          <div class="legacy-memo-grid">
+            <label class="legacy-field memo-field">
+              <span>고객 안내 메모</span>
+              <textarea name="customerMemo" placeholder="고객 My 택스쿡에 표시됩니다."></textarea>
+            </label>
+            <label class="legacy-field memo-field">
+              <span>관리자 내부 메모</span>
+              <textarea name="adminMemo" placeholder="관리자만 확인하는 메모입니다."></textarea>
+            </label>
           </div>
         </div>
       </form>
 
-      <section class="ops-detail-section">
-        <div class="ops-section-title">선결제 정보</div>
-        <div class="prepay-panel">
-          <div class="prepay-grid">
-            <div class="prepay-item"><strong>은행</strong><span data-detail-text="bankName">-</span></div>
-            <div class="prepay-item"><strong>결제금액</strong><span data-detail-money="paidAmount">-</span></div>
-            <div class="prepay-item receipt-cell"><strong>매출전표</strong><button class="ops-button" type="button" data-receipt-open>보기</button></div>
-            <div class="prepay-item"><strong>결제상태</strong><span class="ops-status-pill success" data-detail-text="paymentStatus">-</span></div>
-            <div class="prepay-item wide"><strong>주문상품</strong><span data-detail-text="orderName">-</span></div>
-          </div>
+      <section class="legacy-section">
+        <div class="legacy-section-title action-title">
+          <span>선결제 정보</span>
+          <button class="legacy-button danger" type="button" data-cancel-payment>결제취소</button>
+        </div>
+        <div class="legacy-prepay-strip">
+          <div class="legacy-info-cell"><strong>은행</strong><span data-detail-text="bankName">-</span></div>
+          <div class="legacy-info-cell"><strong>결제금액</strong><span data-detail-money="paidAmount">-</span></div>
+          <div class="legacy-info-cell receipt-cell"><strong>매출전표</strong><button class="legacy-button" type="button" data-receipt-open>보기</button></div>
+          <div class="legacy-info-cell"><strong>결제상태</strong><span class="legacy-status-pill" data-detail-text="paymentStatus">-</span></div>
+          <div class="legacy-info-cell wide"><strong>주문상품</strong><span data-detail-text="orderName">-</span></div>
         </div>
       </section>
     </main>
