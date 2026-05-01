@@ -1,0 +1,339 @@
+.legacy-detail-page {
+  background: #fff;
+  color: #1e344d;
+}
+
+.legacy-detail-main {
+  min-width: 1180px;
+  padding: 0 10px 44px;
+  background: #fff;
+}
+
+.legacy-section {
+  margin-top: 9px;
+}
+
+.legacy-section-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 34px;
+  border-bottom: 1px solid #50545a;
+  color: #1e344d;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.legacy-section-title > span:first-child {
+  flex: 0 0 auto;
+}
+
+.action-title {
+  gap: 18px;
+}
+
+.legacy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  min-height: 30px;
+  border: 1px solid #1785ff;
+  border-radius: 3px;
+  background: #fff;
+  color: #1785ff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.legacy-button.danger {
+  border-color: #ff3333;
+  color: #ff1d1d;
+}
+
+.legacy-button.subtle {
+  margin-left: auto;
+  min-width: 48px;
+  min-height: 28px;
+  border-color: #9aa8b7;
+  color: #36516f;
+}
+
+.legacy-applicant-strip,
+.legacy-prepay-strip {
+  display: grid;
+  grid-template-columns: 1.25fr 1.15fr 1.15fr 1.15fr;
+  align-items: center;
+  min-height: 46px;
+  margin-top: 7px;
+  background: #eef3fb;
+}
+
+.service-detail-form[hidden],
+.vatax-applicant,
+.gitax-applicant,
+.vatax-prepay,
+.gitax-prepay {
+  display: none;
+}
+
+body[data-detail-service="vatax"] .vatax-applicant,
+body[data-detail-service="vatax"] .vatax-prepay,
+body[data-detail-service="gitax"] .gitax-applicant,
+body[data-detail-service="gitax"] .gitax-prepay {
+  display: grid;
+}
+
+.legacy-prepay-strip {
+  grid-template-columns: 1.15fr 1.15fr 1.15fr 1.15fr 1.6fr;
+  min-height: 78px;
+  margin-top: 8px;
+}
+
+.gitax-prepay {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  row-gap: 8px;
+  min-height: 112px;
+}
+
+.legacy-info-cell {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 20px;
+  color: #1e344d;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.legacy-info-cell strong,
+.legacy-read-item strong,
+.legacy-field > span,
+.legacy-check-field > span {
+  color: #23374d;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.legacy-info-cell span,
+.legacy-read-item span {
+  color: #1e344d;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.legacy-process-panel {
+  display: grid;
+  grid-template-columns: 0.9fr 0.9fr 1.04fr 1.04fr 1.04fr 1.04fr;
+  gap: 12px 30px;
+  margin-top: 8px;
+  background: #eef3fb;
+  padding: 12px 20px 12px;
+}
+
+.gitax-process-panel {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 9px;
+  margin-top: 8px;
+  background: #eef3fb;
+  padding: 15px 20px 16px;
+}
+
+.gitax-cell {
+  min-width: 0;
+  min-height: 63px;
+  align-self: start;
+}
+
+.gitax-empty-slot {
+  display: block;
+}
+
+.gitax-process-panel .legacy-read-item {
+  min-height: 63px;
+}
+
+.gitax-process-panel .legacy-read-item strong,
+.gitax-process-panel .legacy-field > span,
+.gitax-process-panel .legacy-check-field > span {
+  min-height: 19px;
+  margin-bottom: 4px;
+}
+
+.gitax-process-panel .legacy-field > .sr-only {
+  position: static;
+  width: auto;
+  height: 19px;
+  overflow: hidden;
+  clip: auto;
+  visibility: hidden;
+  white-space: normal;
+}
+
+.gitax-process-panel .legacy-field,
+.gitax-process-panel .legacy-check-field {
+  gap: 4px;
+}
+
+.gitax-process-panel .legacy-field input,
+.gitax-process-panel .legacy-field select {
+  min-height: 40px;
+  border-radius: 8px;
+}
+
+.gitax-fee-row {
+  align-content: start;
+}
+
+.gitax-memo-field {
+  grid-column: span 3;
+  margin-top: 2px;
+}
+
+.gitax-process-panel .legacy-check-field {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  margin-top: 0;
+  padding-top: 19px;
+}
+
+.emphasis-red {
+  color: #f01414 !important;
+  font-weight: 500;
+}
+
+.legacy-col {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.legacy-col:not(.readonly-col) {
+  gap: 7px;
+}
+
+.legacy-read-item {
+  min-height: 66px;
+  color: #1e344d;
+}
+
+.legacy-read-item strong {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.legacy-field,
+.legacy-check-field {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.legacy-field > span {
+  min-height: 18px;
+}
+
+.legacy-field input,
+.legacy-field select,
+.legacy-field textarea {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #8f97a3;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e344d;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.35;
+  padding: 0 11px;
+}
+
+.legacy-field select {
+  appearance: auto;
+}
+
+.legacy-field textarea {
+  min-height: 96px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.legacy-check-field {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  min-height: 40px;
+  margin-top: 12px;
+}
+
+.legacy-check-field input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #1785ff;
+}
+
+.legacy-memo-grid {
+  grid-column: 3 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+
+.memo-field textarea {
+  min-height: 90px;
+}
+
+.legacy-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-height: 22px;
+  border-radius: 999px;
+  background: #66ad37;
+  color: #fff !important;
+  padding: 0 9px;
+  font-size: 13px !important;
+  font-weight: 900;
+}
+
+.legacy-save-message {
+  margin-left: auto;
+  color: #14743c;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.legacy-save-message[data-type="error"] {
+  color: #d92d20;
+}
+
+.receipt-cell .legacy-button {
+  width: max-content;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .legacy-detail-main {
+    min-width: 1180px;
+  }
+}
