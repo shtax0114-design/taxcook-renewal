@@ -1,0 +1,23 @@
+.hero-actions a.btn-main,
+.hero-actions a.btn-ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.78) !important;
+  background: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.hero-actions a.btn-main:hover,
+.hero-actions a.btn-ghost:hover {
+  border-color: #fff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+}
+
+.hero-actions a.btn-main:active,
+.hero-actions a.btn-ghost:active,
+.hero-actions a.btn-main.is-pressed,
+.hero-actions a.btn-ghost.is-pressed {
+  border-color: var(--navy) !important;
+  background: var(--navy) !important;
+  color: #fff !important;
+}
