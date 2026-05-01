@@ -1,0 +1,13 @@
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta),
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta):link,
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta):visited,
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta):hover,
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta):focus,
+.site-header .header-actions > .nav-cta:not(.mobile-login-cta):active {
+  width: 86px;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  border-radius: 10px;
+  font-size: 12px;
+}
