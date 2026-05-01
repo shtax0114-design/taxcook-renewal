@@ -21,70 +21,14 @@
   position: relative;
 }
 
-.bi-logo-word {
-  position: relative;
-  width: 380px;
-  max-width: 100%;
-  color: #082a78;
-  font-weight: 900;
-  line-height: 0.82;
-  letter-spacing: 0;
-}
-
 .bi-logo-frame {
   width: min(430px, 100%);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.52);
-  padding: 28px 34px;
-  box-shadow: 0 22px 52px rgba(8, 42, 120, 0.1);
 }
 
 .bi-logo-frame img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.bi-num {
-  position: absolute;
-  display: inline-grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 2px solid #222;
-  border-radius: 50%;
-  color: #111;
-  background: transparent;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.bi-num.one {
-  top: -136px;
-  left: -42px;
-}
-
-.bi-num.two {
-  bottom: -116px;
-  left: -42px;
-}
-
-.bi-num.three {
-  top: -160px;
-  right: -52px;
-}
-
-.bi-num.three::before {
-  content: "";
-  position: absolute;
-  right: 31px;
-  top: 16px;
-  width: 92px;
-  height: 54px;
-  border-top: 3px solid #111;
-  border-left: 3px solid #111;
-  transform: skewX(-4deg);
 }
 
 .bi-copy h1 {
@@ -217,74 +161,6 @@
   line-height: 1.55;
 }
 
-.knowhow-services {
-  padding: 82px 0 96px;
-  background: #ffffff;
-}
-
-.knowhow-services .section-heading {
-  text-align: center;
-}
-
-.knowhow-services .section-heading h2 {
-  color: #071d51;
-  font-size: clamp(30px, 4vw, 44px);
-  font-weight: 900;
-}
-
-.knowhow-services .section-heading p:not(.section-eyebrow) {
-  max-width: 680px;
-  margin: 14px auto 0;
-  color: #33466c;
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-.knowhow-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 36px;
-}
-
-.knowhow-card {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  border: 1px solid #dbe4f2;
-  border-radius: 16px;
-  background: #ffffff;
-  padding: 30px;
-  box-shadow: 0 18px 42px rgba(16, 54, 125, 0.08);
-}
-
-.knowhow-card span {
-  color: #2f86ff;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-}
-
-.knowhow-card h3 {
-  margin: 12px 0 10px;
-  color: #071d51;
-  font-size: 25px;
-  font-weight: 900;
-  line-height: 1.3;
-}
-
-.knowhow-card p {
-  color: #33466c;
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.knowhow-card a {
-  margin-top: auto;
-  color: #10367d;
-  font-weight: 900;
-}
-
 .nav a[aria-current="page"] {
   color: #10367d;
   font-weight: 900;
@@ -299,10 +175,6 @@
 
   .bi-mark {
     min-height: 260px;
-  }
-
-  .bi-logo-word {
-    width: 300px;
   }
 
   .bi-logo-frame {
@@ -325,9 +197,6 @@
     margin: 0 auto;
   }
 
-  .knowhow-card-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 620px) {
@@ -336,8 +205,7 @@
   }
 
   .profile-section,
-  .promise-section,
-  .knowhow-services {
+  .promise-section {
     padding: 58px 0;
   }
 
@@ -345,35 +213,8 @@
     min-height: 220px;
   }
 
-  .bi-logo-word {
-    width: 230px;
-  }
-
   .bi-logo-frame {
     width: min(286px, 100%);
-    padding: 20px 24px;
-  }
-
-  .bi-num {
-    width: 28px;
-    height: 28px;
-    font-size: 16px;
-  }
-
-  .bi-num.one,
-  .bi-num.two {
-    left: -28px;
-  }
-
-  .bi-num.three {
-    right: -28px;
-  }
-
-  .bi-num.three::before {
-    width: 62px;
-    height: 32px;
-    right: 26px;
-    top: 13px;
   }
 
   .bi-copy h1 {
