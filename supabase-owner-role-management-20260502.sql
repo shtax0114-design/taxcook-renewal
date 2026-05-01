@@ -1,7 +1,7 @@
 -- Run this in Supabase SQL Editor.
 -- IMPORTANT: Replace CHANGE_ME_OWNER_PASSWORD before running.
 
-create extension if not exists pgcrypto;
+create extension if not exists pgcrypto with schema extensions;
 
 create table if not exists public.admin_security (
   id boolean primary key default true,
@@ -11,12 +11,14 @@ create table if not exists public.admin_security (
 );
 
 insert into public.admin_security (id, owner_passcode_hash)
-values (true, crypt('CHANGE_ME_OWNER_PASSWORD', gen_salt('bf')))
-on conflict (id) do nothing;
+values (true, extensions.crypt('CHANGE_ME_OWNER_PASSWORD', extensions.gen_salt('bf')))
+on conflict (id) do update
+set owner_passcode_hash = excluded.owner_passcode_hash,
+    updated_at = now();
 
 -- To change the owner password later, run:
 -- update public.admin_security
--- set owner_passcode_hash = crypt('NEW_OWNER_PASSWORD', gen_salt('bf')),
+-- set owner_passcode_hash = extensions.crypt('NEW_OWNER_PASSWORD', extensions.gen_salt('bf')),
 --     updated_at = now()
 -- where id = true;
 
@@ -38,7 +40,7 @@ begin
   from public.admin_security
   where id = true;
 
-  if stored_hash is null or stored_hash <> crypt(owner_passcode, stored_hash) then
+  if stored_hash is null or stored_hash <> extensions.crypt(owner_passcode, stored_hash) then
     raise exception '대표 비밀번호가 올바르지 않습니다.';
   end if;
 
