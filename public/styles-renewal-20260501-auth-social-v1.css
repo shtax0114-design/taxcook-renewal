@@ -1,0 +1,56 @@
+.auth-helper {
+  width: min(352px, 100%);
+  margin: 12px auto 0;
+  text-align: center;
+  line-height: 1.55;
+}
+
+.social-login {
+  display: grid;
+  gap: 10px;
+  width: min(352px, 100%);
+  margin: 22px auto 0;
+}
+
+.social-login-button {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #d8e1ef;
+  border-radius: 10px;
+  background: #fff;
+  color: #071d51;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.social-login-button:hover,
+.social-login-button:focus {
+  border-color: #3d8bff;
+  transform: translateY(-1px);
+}
+
+.social-login-button.kakao {
+  border-color: #f5dc33;
+  background: #fee500;
+  color: #191600;
+}
+
+.social-login-button.naver {
+  border-color: #03c75a;
+  background: #03c75a;
+  color: #fff;
+}
+
+.social-login-button.google {
+  background: #fff;
+  color: #1f2937;
+}
+
+.social-login-button:disabled {
+  cursor: progress;
+  opacity: 0.68;
+  transform: none;
+}
