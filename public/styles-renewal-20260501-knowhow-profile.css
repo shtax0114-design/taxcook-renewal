@@ -18,6 +18,7 @@
   min-height: 330px;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
 .bi-logo-word {
@@ -30,37 +31,18 @@
   letter-spacing: 0;
 }
 
-.bi-tax,
-.bi-cook {
+.bi-logo-frame {
+  width: min(430px, 100%);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.52);
+  padding: 28px 34px;
+  box-shadow: 0 22px 52px rgba(8, 42, 120, 0.1);
+}
+
+.bi-logo-frame img {
   display: block;
-  font-size: clamp(70px, 9vw, 104px);
-}
-
-.bi-tax::after,
-.bi-cook::after {
-  content: "";
-  display: block;
-  width: 250px;
-  max-width: 76%;
-  height: 3px;
-  margin: 14px 0 0;
-  background: #121212;
-}
-
-.bi-cook::after {
-  margin-top: 16px;
-}
-
-.bi-corner {
-  position: absolute;
-  top: 58px;
-  right: 28px;
-  width: 76px;
-  height: 54px;
-  border-right: 8px solid #54edcf;
-  border-top: 8px solid #54edcf;
-  border-radius: 0 8px 0 0;
-  transform: rotate(180deg);
+  width: 100%;
+  height: auto;
 }
 
 .bi-num {
@@ -79,17 +61,17 @@
 }
 
 .bi-num.one {
-  top: 38px;
-  left: -54px;
+  top: -136px;
+  left: -42px;
 }
 
 .bi-num.two {
-  bottom: 54px;
-  left: -54px;
+  bottom: -116px;
+  left: -42px;
 }
 
 .bi-num.three {
-  top: 0;
+  top: -160px;
   right: -52px;
 }
 
@@ -98,8 +80,8 @@
   position: absolute;
   right: 31px;
   top: 16px;
-  width: 86px;
-  height: 44px;
+  width: 92px;
+  height: 54px;
   border-top: 3px solid #111;
   border-left: 3px solid #111;
   transform: skewX(-4deg);
@@ -218,12 +200,12 @@
 }
 
 .promise-panel img {
-  width: 124px;
-  height: 124px;
-  border-radius: 24px;
+  width: 150px;
+  height: auto;
+  border-radius: 22px;
   object-fit: contain;
-  background: #072b63;
-  padding: 18px;
+  background: #020817;
+  padding: 18px 20px;
   box-shadow: 0 18px 42px rgba(8, 42, 120, 0.16);
 }
 
@@ -323,6 +305,10 @@
     width: 300px;
   }
 
+  .bi-logo-frame {
+    width: min(360px, 100%);
+  }
+
   .bi-copy {
     text-align: center;
   }
@@ -363,23 +349,9 @@
     width: 230px;
   }
 
-  .bi-tax,
-  .bi-cook {
-    font-size: 62px;
-  }
-
-  .bi-tax::after,
-  .bi-cook::after {
-    width: 168px;
-    height: 2px;
-  }
-
-  .bi-corner {
-    top: 42px;
-    right: 12px;
-    width: 56px;
-    height: 40px;
-    border-width: 6px;
+  .bi-logo-frame {
+    width: min(286px, 100%);
+    padding: 20px 24px;
   }
 
   .bi-num {
@@ -390,11 +362,11 @@
 
   .bi-num.one,
   .bi-num.two {
-    left: -38px;
+    left: -28px;
   }
 
   .bi-num.three {
-    right: -38px;
+    right: -28px;
   }
 
   .bi-num.three::before {
