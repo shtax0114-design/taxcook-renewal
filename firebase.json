@@ -7,6 +7,18 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/members",
+        "destination": "/mypage",
+        "type": 302
+      },
+      {
+        "source": "/members.html",
+        "destination": "/mypage.html",
+        "type": 302
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(js|css|png|jpg|jpeg|webp|svg)",
