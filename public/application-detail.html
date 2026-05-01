@@ -6,7 +6,7 @@
     <title>신청 상세 | 택스쿡</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles-renewal-20260501-payment-info.css">
-    <link rel="stylesheet" href="styles-renewal-20260501-admin-detail-legacy-v7.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-admin-detail-legacy-v8.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
@@ -110,20 +110,21 @@
             <label class="legacy-field"><span>할인액</span><input type="number" name="discountAmount" min="0" placeholder="금액"></label>
             <label class="legacy-field"><span>산출세액</span><input type="number" name="calculatedTax" min="0" placeholder="금액"></label>
           </div>
-          <div class="gitax-col">
+          <div class="gitax-col gitax-right-stack">
             <label class="legacy-field"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
             <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
             <div class="legacy-read-item gitax-fee-row"><strong>최종수수료</strong><span data-detail-money="finalPaymentAmount">-</span></div>
             <label class="legacy-field"><span>기납부세액</span><input type="number" name="prepaidTax" min="0" placeholder="금액"></label>
           </div>
-          <div class="gitax-col">
+          <div class="gitax-col gitax-right-stack">
             <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="etcExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
             <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="etcExtraAmount" min="0" placeholder="금액"></label>
             <div class="legacy-read-item gitax-fee-row"><strong>부가세</strong><span data-detail-money="vatAmount">-</span></div>
             <label class="legacy-field"><span>최종 납부세액</span><input type="number" name="finalTaxDue" min="0" placeholder="금액"></label>
           </div>
-          <div class="gitax-col">
-            <label class="legacy-field gitax-tax-reduction"><span>세액공제감면</span><input type="number" name="taxReduction" min="0" placeholder="금액"></label>
+          <div class="gitax-col gitax-right-stack">
+            <span class="gitax-empty-slot" aria-hidden="true"></span>
+            <label class="legacy-field"><span>세액공제감면</span><input type="number" name="taxReduction" min="0" placeholder="금액"></label>
             <div class="legacy-read-item gitax-fee-row"><strong>합계금액</strong><span data-detail-money="totalAmount">-</span></div>
             <label class="legacy-check-field"><span>납부서 전달</span><input type="checkbox" name="beforeDeadline"></label>
           </div>
