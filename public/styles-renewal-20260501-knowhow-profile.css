@@ -161,7 +161,7 @@
 .promise-panel h2 {
   margin: 26px 0 0;
   color: #020817;
-  font-size: clamp(28px, 4.2vw, 38px);
+  font-size: clamp(20px, 2.7vw, 28px);
   font-weight: 900;
   line-height: 1.55;
 }
@@ -230,9 +230,12 @@
     font-size: 16px;
   }
 
-  .profile-copy h2,
-  .promise-panel h2 {
+  .profile-copy h2 {
     font-size: 27px;
+  }
+
+  .promise-panel h2 {
+    font-size: 21px;
   }
 
   .career-block li {
