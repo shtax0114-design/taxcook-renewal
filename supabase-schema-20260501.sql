@@ -103,6 +103,7 @@ for each row execute function public.set_updated_at();
 alter table public.profiles enable row level security;
 alter table public.applications enable row level security;
 
+drop policy if exists "profiles_select_own_or_admin" on public.profiles;
 create policy "profiles_select_own_or_admin"
 on public.profiles for select
 using (
@@ -110,10 +111,12 @@ using (
   or public.is_admin()
 );
 
+drop policy if exists "profiles_insert_own" on public.profiles;
 create policy "profiles_insert_own"
 on public.profiles for insert
 with check (auth.uid() = id);
 
+drop policy if exists "profiles_update_own_or_admin" on public.profiles;
 create policy "profiles_update_own_or_admin"
 on public.profiles for update
 using (
@@ -125,6 +128,7 @@ with check (
   or public.is_admin()
 );
 
+drop policy if exists "applications_select_own_or_admin" on public.applications;
 create policy "applications_select_own_or_admin"
 on public.applications for select
 using (
@@ -132,21 +136,18 @@ using (
   or public.is_admin()
 );
 
+drop policy if exists "applications_insert_own" on public.applications;
 create policy "applications_insert_own"
 on public.applications for insert
 with check (auth.uid() = uid);
 
+drop policy if exists "applications_update_admin" on public.applications;
 create policy "applications_update_admin"
 on public.applications for update
-using (
-  public.is_admin()
-)
-with check (
-  public.is_admin()
-);
+using (public.is_admin())
+with check (public.is_admin());
 
+drop policy if exists "applications_delete_admin" on public.applications;
 create policy "applications_delete_admin"
 on public.applications for delete
-using (
-  public.is_admin()
-);
+using (public.is_admin());
