@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v4.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v5.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-grid-coords.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
@@ -97,46 +98,35 @@
           <span class="legacy-save-message" data-save-message hidden></span>
         </div>
         <div class="gitax-process-panel">
-          <div class="legacy-read-item gitax-cell"><strong>사업자구분</strong><span data-detail-text="businessType">-</span></div>
-          <div class="legacy-read-item gitax-cell"><strong>귀속년도</strong><span data-detail-text="gitaxYear">-</span></div>
-          <div class="gitax-cell gitax-stack-cell">
-            <label class="legacy-field"><span>신고담당자</span><select name="manager" data-manager-select><option value="">신고담당자명</option></select></label>
-            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="extraPaymentType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="extraPaymentAmount" min="0" placeholder="금액"></label>
-          </div>
-          <div class="gitax-cell gitax-stack-cell">
-            <label class="legacy-field"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
-            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="businessExtraAmount" min="0" placeholder="금액"></label>
-          </div>
-          <div class="gitax-cell gitax-stack-cell">
-            <span class="gitax-stack-spacer" aria-hidden="true"></span>
-            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="etcExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="etcExtraAmount" min="0" placeholder="금액"></label>
-          </div>
-          <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
+          <div class="legacy-read-item gitax-cell gitax-pos-business-type"><strong>사업자구분</strong><span data-detail-text="businessType">-</span></div>
+          <div class="legacy-read-item gitax-cell gitax-pos-year"><strong>귀속년도</strong><span data-detail-text="gitaxYear">-</span></div>
+          <label class="legacy-field gitax-cell gitax-pos-manager"><span>신고담당자</span><select name="manager" data-manager-select><option value="">신고담당자명</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-status"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
 
-          <label class="legacy-field gitax-cell"><span>신고유형</span><select name="reportType" data-fixed-options><option>복식부기</option><option>간편장부A</option><option>간편장부B</option><option>단순경비율</option><option>기준경비율</option></select></label>
-          <label class="legacy-field gitax-cell"><span>기본수수료</span><input type="number" name="baseFee" min="0" placeholder="금액"></label>
-          <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
+          <label class="legacy-field gitax-cell gitax-pos-report-type"><span>신고유형</span><select name="reportType" data-fixed-options><option>복식부기</option><option>간편장부A</option><option>간편장부B</option><option>단순경비율</option><option>기준경비율</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-base-fee"><span>기본수수료</span><input type="number" name="baseFee" min="0" placeholder="금액"></label>
+          <label class="legacy-field gitax-cell gitax-pos-extra-1"><span class="sr-only">추가결제 항목</span><select name="extraPaymentType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-extra-2"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-extra-3"><span class="sr-only">추가결제 항목</span><select name="etcExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-tax-reduction"><span>세액공제감면</span><input type="number" name="taxReduction" min="0" placeholder="금액"></label>
 
-          <div class="legacy-read-item gitax-cell"><strong>계약금</strong><span class="emphasis-red" data-detail-money="depositFee">-</span></div>
-          <div class="legacy-read-item gitax-cell"><strong>할인코드</strong><span data-detail-text="couponCode">-</span></div>
-          <label class="legacy-field gitax-cell"><span>세액공제감면</span><input type="number" name="taxReduction" min="0" placeholder="금액"></label>
+          <div class="legacy-read-item gitax-cell gitax-pos-deposit"><strong>계약금</strong><span class="emphasis-red" data-detail-money="depositFee">-</span></div>
+          <div class="legacy-read-item gitax-cell gitax-pos-coupon"><strong>할인코드</strong><span data-detail-text="couponCode">-</span></div>
+          <label class="legacy-field gitax-cell gitax-pos-amount-1"><span class="sr-only">추가결제 금액</span><input type="number" name="extraPaymentAmount" min="0" placeholder="금액"></label>
+          <label class="legacy-field gitax-cell gitax-pos-amount-2"><span class="sr-only">추가결제 금액</span><input type="number" name="businessExtraAmount" min="0" placeholder="금액"></label>
+          <label class="legacy-field gitax-cell gitax-pos-amount-3"><span class="sr-only">추가결제 금액</span><input type="number" name="etcExtraAmount" min="0" placeholder="금액"></label>
 
-          <div class="legacy-read-item gitax-cell"><strong>결제상태</strong><span class="legacy-status-pill" data-detail-text="paymentStatus">-</span></div>
-          <label class="legacy-field gitax-cell"><span>신고일자</span><input type="date" name="reportDate"></label>
-          <label class="legacy-field gitax-cell"><span>할인액</span><input type="number" name="discountAmount" min="0" placeholder="금액"></label>
-          <div class="legacy-read-item gitax-cell gitax-fee-row"><strong>최종수수료</strong><span data-detail-money="finalPaymentAmount">-</span></div>
-          <div class="legacy-read-item gitax-cell gitax-fee-row"><strong>부가세</strong><span data-detail-money="vatAmount">-</span></div>
-          <div class="legacy-read-item gitax-cell gitax-fee-row"><strong>합계금액</strong><span data-detail-money="totalAmount">-</span></div>
+          <div class="legacy-read-item gitax-cell gitax-pos-payment-status"><strong>결제상태</strong><span class="legacy-status-pill" data-detail-text="paymentStatus">-</span></div>
+          <label class="legacy-field gitax-cell gitax-pos-report-date"><span>신고일자</span><input type="date" name="reportDate"></label>
+          <label class="legacy-field gitax-cell gitax-pos-discount"><span>할인액</span><input type="number" name="discountAmount" min="0" placeholder="금액"></label>
+          <div class="legacy-read-item gitax-cell gitax-fee-row gitax-pos-final-fee"><strong>최종수수료</strong><span data-detail-money="finalPaymentAmount">-</span></div>
+          <div class="legacy-read-item gitax-cell gitax-fee-row gitax-pos-vat"><strong>부가세</strong><span data-detail-money="vatAmount">-</span></div>
+          <div class="legacy-read-item gitax-cell gitax-fee-row gitax-pos-total"><strong>합계금액</strong><span data-detail-money="totalAmount">-</span></div>
 
-          <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
-          <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
-          <label class="legacy-field gitax-cell"><span>산출세액</span><input type="number" name="calculatedTax" min="0" placeholder="금액"></label>
-          <label class="legacy-field gitax-cell"><span>기납부세액</span><input type="number" name="prepaidTax" min="0" placeholder="금액"></label>
-          <label class="legacy-field gitax-cell"><span>최종 납부세액</span><input type="number" name="finalTaxDue" min="0" placeholder="금액"></label>
-          <label class="legacy-check-field gitax-cell"><span>납부서 전달</span><input type="checkbox" name="beforeDeadline"></label>
+          <label class="legacy-field gitax-cell gitax-pos-calculated-tax"><span>산출세액</span><input type="number" name="calculatedTax" min="0" placeholder="금액"></label>
+          <label class="legacy-field gitax-cell gitax-pos-prepaid-tax"><span>기납부세액</span><input type="number" name="prepaidTax" min="0" placeholder="금액"></label>
+          <label class="legacy-field gitax-cell gitax-pos-final-tax"><span>최종 납부세액</span><input type="number" name="finalTaxDue" min="0" placeholder="금액"></label>
+          <label class="legacy-check-field gitax-cell gitax-pos-delivery"><span>납부서 전달</span><input type="checkbox" name="beforeDeadline"></label>
 
           <label class="legacy-field gitax-memo-field"><span>고객 안내 메모</span><textarea name="customerMemo" placeholder="고객 My 택스쿡에 표시됩니다."></textarea></label>
           <label class="legacy-field gitax-memo-field"><span>관리자 내부 메모</span><textarea name="adminMemo" placeholder="관리자만 확인하는 메모입니다."></textarea></label>

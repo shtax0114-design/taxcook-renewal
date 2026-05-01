@@ -1,0 +1,72 @@
+.gitax-process-panel {
+  grid-auto-flow: row;
+  grid-auto-rows: min-content;
+  row-gap: 4px;
+}
+
+.gitax-process-panel .gitax-cell {
+  min-height: 0;
+}
+
+.gitax-process-panel .gitax-pos-business-type { grid-column: 1; grid-row: 1; }
+.gitax-process-panel .gitax-pos-year { grid-column: 2; grid-row: 1; }
+.gitax-process-panel .gitax-pos-manager { grid-column: 3; grid-row: 1; }
+.gitax-process-panel .gitax-pos-status { grid-column: 4; grid-row: 1; }
+
+.gitax-process-panel .gitax-pos-report-type { grid-column: 1; grid-row: 2; }
+.gitax-process-panel .gitax-pos-base-fee { grid-column: 2; grid-row: 2; }
+.gitax-process-panel .gitax-pos-extra-1 { grid-column: 3; grid-row: 2; align-self: end; }
+.gitax-process-panel .gitax-pos-extra-2 { grid-column: 4; grid-row: 2; align-self: end; }
+.gitax-process-panel .gitax-pos-extra-3 { grid-column: 5; grid-row: 2; align-self: end; }
+.gitax-process-panel .gitax-pos-tax-reduction { grid-column: 6; grid-row: 2; }
+
+.gitax-process-panel .gitax-pos-deposit { grid-column: 1; grid-row: 3; }
+.gitax-process-panel .gitax-pos-coupon { grid-column: 2; grid-row: 3; }
+.gitax-process-panel .gitax-pos-amount-1 { grid-column: 3; grid-row: 3; }
+.gitax-process-panel .gitax-pos-amount-2 { grid-column: 4; grid-row: 3; }
+.gitax-process-panel .gitax-pos-amount-3 { grid-column: 5; grid-row: 3; }
+
+.gitax-process-panel .gitax-pos-payment-status { grid-column: 1; grid-row: 4; }
+.gitax-process-panel .gitax-pos-report-date { grid-column: 2; grid-row: 4; }
+.gitax-process-panel .gitax-pos-discount { grid-column: 3; grid-row: 4; }
+.gitax-process-panel .gitax-pos-final-fee { grid-column: 4; grid-row: 4; }
+.gitax-process-panel .gitax-pos-vat { grid-column: 5; grid-row: 4; }
+.gitax-process-panel .gitax-pos-total { grid-column: 6; grid-row: 4; }
+
+.gitax-process-panel .gitax-pos-calculated-tax { grid-column: 3; grid-row: 5; }
+.gitax-process-panel .gitax-pos-prepaid-tax { grid-column: 4; grid-row: 5; }
+.gitax-process-panel .gitax-pos-final-tax { grid-column: 5; grid-row: 5; }
+.gitax-process-panel .gitax-pos-delivery { grid-column: 6; grid-row: 5; }
+
+.gitax-process-panel .gitax-pos-extra-1 > .sr-only,
+.gitax-process-panel .gitax-pos-extra-2 > .sr-only,
+.gitax-process-panel .gitax-pos-extra-3 > .sr-only,
+.gitax-process-panel .gitax-pos-amount-1 > .sr-only,
+.gitax-process-panel .gitax-pos-amount-2 > .sr-only,
+.gitax-process-panel .gitax-pos-amount-3 > .sr-only {
+  display: none !important;
+}
+
+.gitax-process-panel .gitax-pos-extra-1,
+.gitax-process-panel .gitax-pos-extra-2,
+.gitax-process-panel .gitax-pos-extra-3,
+.gitax-process-panel .gitax-pos-amount-1,
+.gitax-process-panel .gitax-pos-amount-2,
+.gitax-process-panel .gitax-pos-amount-3 {
+  gap: 0;
+}
+
+.gitax-process-panel .gitax-pos-manager,
+.gitax-process-panel .gitax-pos-status,
+.gitax-process-panel .gitax-pos-extra-1,
+.gitax-process-panel .gitax-pos-extra-2,
+.gitax-process-panel .gitax-pos-extra-3,
+.gitax-process-panel .gitax-pos-amount-1,
+.gitax-process-panel .gitax-pos-amount-2,
+.gitax-process-panel .gitax-pos-amount-3 {
+  max-width: 100%;
+}
+
+.gitax-process-panel .gitax-memo-field {
+  grid-row: 6;
+}
