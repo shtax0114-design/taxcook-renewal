@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles-renewal-20260501-ops-wrap.css">
     <link rel="stylesheet" href="styles-renewal-20260501-mypage-mobilecards.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-auth-reset-v1.css">
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
-    <script defer src="site-renewal-20260501-supabase-core-v4.js"></script>
-    <script defer src="site-renewal-20260501-supabase-mypage-v4.js"></script>
+    <script defer src="site-renewal-20260501-supabase-core-v6.js"></script>
+    <script defer src="site-renewal-20260501-mypage-profile-v1.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="/" aria-label="택스쿡 홈"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
+        <a class="brand" href="/" aria-label="택스쿡"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
         <nav class="nav" data-nav data-open="false" aria-label="주요 메뉴">
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
@@ -41,12 +42,42 @@
           </div>
           <button class="mypage-logout" type="button" data-logout>로그아웃</button>
         </div>
-        <dl class="mypage-profile" aria-label="회원 정보">
-          <div><dt>아이디</dt><dd data-profile-userid>-</dd></div>
+
+        <dl class="mypage-profile" aria-label="고객 정보">
+          <div><dt>이메일</dt><dd data-profile-email>-</dd></div>
           <div><dt>성명</dt><dd data-profile-name>-</dd></div>
           <div><dt>휴대폰번호</dt><dd data-profile-phone>-</dd></div>
           <div><dt>사업자구분</dt><dd data-profile-business>-</dd></div>
         </dl>
+
+        <section class="profile-panel" aria-labelledby="profile-title">
+          <h2 id="profile-title">고객정보 입력</h2>
+          <form class="profile-form" data-profile-form>
+            <label class="profile-field">
+              성명
+              <input type="text" name="name" autocomplete="name">
+            </label>
+            <label class="profile-field">
+              휴대폰번호
+              <input type="tel" name="phone" maxlength="11" autocomplete="tel">
+            </label>
+            <label class="profile-field">
+              사업자구분
+              <select name="businessType">
+                <option value="">선택</option>
+                <option value="사업자">사업자</option>
+                <option value="비사업자">비사업자</option>
+              </select>
+            </label>
+            <label class="profile-field">
+              사업자번호
+              <input type="text" name="bizNumber" maxlength="10" inputmode="numeric">
+            </label>
+            <p class="profile-message" data-profile-message hidden></p>
+            <button class="profile-save" type="submit">저장</button>
+          </form>
+        </section>
+
         <div class="mypage-card">
           <table class="ops-table mypage-table">
             <thead>

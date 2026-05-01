@@ -4,23 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>회원가입 | 택스쿡</title>
-    <meta name="description" content="택스쿡 간편 회원가입 페이지입니다.">
+    <meta name="description" content="택스쿡 이메일 회원가입 페이지입니다.">
     <meta name="robots" content="noindex, follow">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles-renewal-20260501-authcompact.css">
     <link rel="stylesheet" href="styles-renewal-20260501-auth-live.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-auth-reset-v1.css">
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
-    <script defer src="site-renewal-20260501-supabase-core-v4.js"></script>
-    <script defer src="site-renewal-20260501-supabase-auth-v5.js"></script>
+    <script defer src="site-renewal-20260501-supabase-core-v6.js"></script>
+    <script defer src="site-renewal-20260501-auth-email-v1.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">본문으로 이동</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="/" aria-label="택스쿡 홈"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
+        <a class="brand" href="/" aria-label="택스쿡"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
         <nav class="nav" data-nav data-open="false" aria-label="주요 메뉴">
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
@@ -38,59 +39,26 @@
     <main id="main" class="auth-main">
       <section class="auth-shell" aria-labelledby="signup-title">
         <div class="auth-heading">
-          <h1 id="signup-title">간편 회원 가입</h1>
-          <p>간단한 정보를 입력하여 회원가입하고<br>쉽고 간편한 택스쿡의 세금대행서비스를 이용하실수 있습니다.</p>
-          <span class="required-note">*표시는 필수 입력 사항입니다.</span>
+          <h1 id="signup-title">이메일 회원가입</h1>
+          <p>이메일 인증으로 계정을 만들고<br>고객정보는 My 택스쿡에서 입력하세요.</p>
         </div>
         <form class="auth-form" data-signup-form>
           <label class="auth-row">
-            <span class="auth-label required">아이디</span>
-            <input type="text" name="userId" autocomplete="username">
+            <span class="auth-label required">이메일</span>
+            <input type="email" name="email" autocomplete="email" required>
           </label>
           <label class="auth-row">
             <span class="auth-label required">비밀번호</span>
-            <input type="password" name="password" autocomplete="new-password">
+            <input type="password" name="password" autocomplete="new-password" required>
           </label>
           <label class="auth-row">
             <span class="auth-label required">비밀번호 확인</span>
-            <input type="password" name="passwordConfirm" autocomplete="new-password">
+            <input type="password" name="passwordConfirm" autocomplete="new-password" required>
           </label>
-          <label class="auth-row">
-            <span class="auth-label required">성명</span>
-            <input type="text" name="name" autocomplete="name">
-          </label>
-          <label class="auth-row">
-            <span class="auth-label required">휴대폰번호</span>
-            <input type="text" name="phone" maxlength="11" autocomplete="tel" data-numeric>
-          </label>
-          <div class="auth-row">
-            <span class="auth-label required">생년월일</span>
-            <div class="auth-date-grid">
-              <select name="birthYear"><option value="">년</option></select>
-              <select name="birthMonth"><option value="">월</option></select>
-              <select name="birthDate"><option value="">일</option></select>
-            </div>
-          </div>
-          <label class="auth-row">
-            <span class="auth-label required">사업자구분</span>
-            <select name="businessType" data-biz-select>
-              <option value="">사업자구분</option>
-              <option value="사업자">사업자</option>
-              <option value="비사업자">비사업자</option>
-            </select>
-          </label>
-          <div class="auth-row auth-biznum-row" data-biznum-row hidden>
-            <span class="auth-label required">사업자번호</span>
-            <div class="auth-biznum-grid biznum-grid">
-              <input type="text" name="biznum1" maxlength="3" data-numeric>
-              <input type="text" name="biznum2" maxlength="2" data-numeric>
-              <input type="text" name="biznum3" maxlength="5" data-numeric>
-            </div>
-          </div>
-          <button class="auth-submit" type="submit">회원가입</button>
+          <button class="auth-submit" type="submit">인증 메일 받기</button>
         </form>
         <p class="auth-message" data-auth-message hidden></p>
-        <p class="auth-helper">아이디는 영문 소문자, 숫자, 점, 밑줄, 하이픈으로 4~30자리 입력해주세요.</p>
+        <p class="auth-helper">비밀번호는 6자리 이상 입력해주세요.</p>
         <p class="auth-alt">이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
       </section>
     </main>
@@ -102,8 +70,8 @@
           <p>세금 신고, 쉽고 정확하게</p>
         </div>
         <div class="footer-info">
-          <strong>스마일택스</strong>
-          <p>대표자: 신현찬 | 사업자번호: 701-15-00131<br>주소: 인천시 서구 바리미로 31, 지오프라자 307~308호<br>통신판매업신고번호: 제2022-인천남동구-0761호<br>고객센터: 010-6505-0114 | 운영시간: 09:00 ~ 18:00</p>
+          <strong>신현찬 세무사</strong>
+          <p>대표자: 신현찬 | 사업자번호: 701-15-00131<br>주소: 인천광역시 서구 바리미로 31, 지엘프라자 307~308호<br>통신판매업신고번호: 제2022-인천서구-0761호<br>고객센터: 010-6505-0114 | 운영시간: 09:00 ~ 18:00</p>
         </div>
         <div class="footer-links">
           <a href="login.html">로그인</a>
@@ -113,7 +81,7 @@
           <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
         </div>
       </div>
-      <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
+      <p class="copyright">© 2026 신현찬 세무사. All rights reserved.</p>
     </footer>
   </body>
 </html>
