@@ -1,0 +1,20 @@
+.services .svc-card:active,
+.services .svc-card.is-pressed {
+  border-color: var(--navy) !important;
+  background:
+    radial-gradient(circle at 22% 26%, rgba(80, 120, 205, 0.24) 0%, rgba(80, 120, 205, 0) 38%),
+    linear-gradient(135deg, #071d51 0%, #0b2560 100%) !important;
+}
+
+.services .svc-card:active h3,
+.services .svc-card:active p,
+.services .svc-card.is-pressed h3,
+.services .svc-card.is-pressed p {
+  color: #fff !important;
+}
+
+.services .svc-card:active > .svc-icon,
+.services .svc-card.is-pressed > .svc-icon {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
