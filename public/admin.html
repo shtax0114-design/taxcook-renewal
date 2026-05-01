@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="styles-renewal-20260501-admin-clean.css">
     <link rel="stylesheet" href="styles-renewal-20260501-admin-dashboard-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-search-horizontal.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-popup-manager.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260501-admin-dashboard-v5.js"></script>
+    <script defer src="site-renewal-20260502-admin-dashboard-popup-v1.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
@@ -39,6 +40,7 @@
         <div class="admin-menu-group">
           <button class="admin-menu-button" type="button"><span class="admin-menu-icon">⚙</span>설정 <i class="admin-menu-caret"></i></button>
           <div class="admin-dropdown">
+            <button type="button" data-admin-tab="popups"><span class="admin-menu-icon">▣</span>메인 팝업</button>
             <button type="button" data-admin-tab="members"><span class="admin-menu-icon">▱</span>권한 관리</button>
           </div>
         </div>
@@ -49,6 +51,7 @@
       <div class="ops-toolbar admin-real-toolbar admin-dashboard-toolbar">
         <button class="ops-button active" type="button" data-admin-tab="applications">전체 신청</button>
         <button class="ops-button" type="button" data-admin-tab="members">회원정보</button>
+        <button class="ops-button" type="button" data-admin-tab="popups">메인팝업</button>
         <a class="ops-button" href="admin-vatax.html">부가세만</a>
         <a class="ops-button" href="admin-gitax.html">종소세만</a>
         <select class="admin-filter" data-service-filter aria-label="서비스 필터">
@@ -110,6 +113,64 @@
           </table>
         </div>
       </section>
+
+      <section data-admin-panel="popups" hidden>
+        <div class="popup-admin-title">메인팝업</div>
+        <div class="popup-admin-toolbar">
+          <button class="grid-tool add" type="button" data-popup-add><span>＋</span>추가</button>
+          <button class="grid-tool danger" type="button" data-popup-delete-selected><span>×</span>선택삭제</button>
+          <span class="popup-admin-message" data-popup-message hidden></span>
+        </div>
+        <div class="popup-admin-wrap">
+          <table class="popup-admin-table">
+            <thead>
+              <tr>
+                <th><input type="checkbox" data-popup-check-all aria-label="전체 선택"></th>
+                <th></th>
+                <th>이미지</th>
+                <th>게시기간</th>
+                <th>사용여부</th>
+                <th>최종수정자</th>
+                <th>최종수정일</th>
+              </tr>
+            </thead>
+            <tbody data-popup-list></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="popup-modal-backdrop" data-popup-modal hidden>
+        <form class="popup-modal" data-popup-form>
+          <input type="hidden" name="id">
+          <input type="hidden" name="imageUrl">
+          <input type="hidden" name="imagePath">
+          <button class="popup-modal-close" type="button" data-popup-close aria-label="닫기">×</button>
+          <h2 data-popup-modal-title>모달팝업 추가</h2>
+          <label class="popup-modal-row">
+            <span>이미지 선택</span>
+            <input class="popup-file-input" type="file" name="imageFile" accept="image/*">
+            <button class="popup-file-button" type="button" data-popup-file-button>Choose</button>
+          </label>
+          <div class="popup-preview" data-popup-preview hidden></div>
+          <label class="popup-modal-row popup-date-row">
+            <span>게시기간</span>
+            <input type="date" name="startDate" required>
+            <em>~</em>
+            <input type="date" name="endDate" required>
+          </label>
+          <label class="popup-modal-row">
+            <span>사용여부</span>
+            <select name="isActive">
+              <option value="true">사용</option>
+              <option value="false">미사용</option>
+            </select>
+          </label>
+          <div class="popup-modal-actions">
+            <button class="legacy-button danger" type="button" data-popup-close>취소</button>
+            <button class="legacy-button" type="submit">확인</button>
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
