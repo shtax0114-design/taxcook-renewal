@@ -9,7 +9,12 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles-renewal-20260501-auth-title.css">
-    <script defer src="site-renewal-20260501-membergrid-save.js"></script>
+    <link rel="stylesheet" href="styles-renewal-20260501-auth-live.css">
+    <script defer src="/__/firebase/8.10.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.10.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.10.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="site-renewal-20260501-firebase-auth.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">본문으로 이동</a>
@@ -24,7 +29,7 @@
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
-          <a class="nav-cta" href="members.html">회원관리</a>
+          <a class="nav-cta" href="mypage.html">My 택스쿡</a>
           <button class="menu-button" type="button" data-menu-button aria-label="메뉴 열기" aria-expanded="false">☰</button>
         </div>
       </div>
@@ -48,6 +53,7 @@
           <button class="auth-submit" type="submit">로그인</button>
         </form>
         <p class="auth-message" data-auth-message hidden></p>
+        <p class="auth-helper">아이디는 영문 소문자, 숫자, 점, 밑줄, 하이픈으로 입력해주세요.</p>
         <p class="auth-alt">아직 계정이 없으신가요? <a href="signup.html">회원가입</a></p>
       </section>
     </main>
