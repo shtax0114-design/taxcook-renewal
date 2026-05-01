@@ -1,0 +1,25 @@
+.gitax-process-panel .gitax-stack-cell {
+  grid-row: span 3;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-height: 0;
+}
+
+.gitax-process-panel .gitax-stack-cell .legacy-field {
+  min-height: 0;
+  gap: 2px;
+}
+
+.gitax-process-panel .gitax-stack-cell .legacy-field > .sr-only {
+  display: none !important;
+}
+
+.gitax-process-panel .gitax-stack-cell select,
+.gitax-process-panel .gitax-stack-cell input {
+  min-height: 34px;
+}
+
+.gitax-process-panel .gitax-stack-spacer {
+  height: 52px;
+}

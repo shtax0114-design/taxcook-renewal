@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v2.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v4.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v5.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
@@ -98,23 +99,29 @@
         <div class="gitax-process-panel">
           <div class="legacy-read-item gitax-cell"><strong>사업자구분</strong><span data-detail-text="businessType">-</span></div>
           <div class="legacy-read-item gitax-cell"><strong>귀속년도</strong><span data-detail-text="gitaxYear">-</span></div>
-          <label class="legacy-field gitax-cell gitax-stack-top-cell"><span>신고담당자</span><select name="manager" data-manager-select><option value="">신고담당자명</option></select></label>
-          <label class="legacy-field gitax-cell gitax-stack-top-cell"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
-          <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
+          <div class="gitax-cell gitax-stack-cell">
+            <label class="legacy-field"><span>신고담당자</span><select name="manager" data-manager-select><option value="">신고담당자명</option></select></label>
+            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="extraPaymentType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="extraPaymentAmount" min="0" placeholder="금액"></label>
+          </div>
+          <div class="gitax-cell gitax-stack-cell">
+            <label class="legacy-field"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
+            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="businessExtraAmount" min="0" placeholder="금액"></label>
+          </div>
+          <div class="gitax-cell gitax-stack-cell">
+            <span class="gitax-stack-spacer" aria-hidden="true"></span>
+            <label class="legacy-field"><span class="sr-only">추가결제 항목</span><select name="etcExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
+            <label class="legacy-field"><span class="sr-only">추가결제 금액</span><input type="number" name="etcExtraAmount" min="0" placeholder="금액"></label>
+          </div>
           <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
 
           <label class="legacy-field gitax-cell"><span>신고유형</span><select name="reportType" data-fixed-options><option>복식부기</option><option>간편장부A</option><option>간편장부B</option><option>단순경비율</option><option>기준경비율</option></select></label>
           <label class="legacy-field gitax-cell"><span>기본수수료</span><input type="number" name="baseFee" min="0" placeholder="금액"></label>
-          <label class="legacy-field gitax-cell gitax-extra-select-cell"><span class="sr-only">추가결제 항목</span><select name="extraPaymentType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-          <label class="legacy-field gitax-cell gitax-extra-select-cell"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
-          <label class="legacy-field gitax-cell gitax-extra-select-cell"><span class="sr-only">추가결제 항목</span><select name="etcExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
           <span class="gitax-cell gitax-empty-slot" aria-hidden="true"></span>
 
           <div class="legacy-read-item gitax-cell"><strong>계약금</strong><span class="emphasis-red" data-detail-money="depositFee">-</span></div>
           <div class="legacy-read-item gitax-cell"><strong>할인코드</strong><span data-detail-text="couponCode">-</span></div>
-          <label class="legacy-field gitax-cell"><span class="sr-only">추가결제 금액</span><input type="number" name="extraPaymentAmount" min="0" placeholder="금액"></label>
-          <label class="legacy-field gitax-cell"><span class="sr-only">추가결제 금액</span><input type="number" name="businessExtraAmount" min="0" placeholder="금액"></label>
-          <label class="legacy-field gitax-cell"><span class="sr-only">추가결제 금액</span><input type="number" name="etcExtraAmount" min="0" placeholder="금액"></label>
           <label class="legacy-field gitax-cell"><span>세액공제감면</span><input type="number" name="taxReduction" min="0" placeholder="금액"></label>
 
           <div class="legacy-read-item gitax-cell"><strong>결제상태</strong><span class="legacy-status-pill" data-detail-text="paymentStatus">-</span></div>
