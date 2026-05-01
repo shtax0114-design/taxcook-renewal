@@ -1,0 +1,229 @@
+(function () {
+  const core = window.taxcookSupabase;
+  if (!core) return;
+
+  let applications = [];
+  let members = [];
+  let activeTab = "applications";
+  let expandedApplicationId = "";
+
+  const serviceLabel = (service) => service === "gitax" ? "종합소득세" : "부가가치세";
+  const normalize = (value) => String(value || "").toLowerCase();
+  const defaultVataxFee = (businessType = "") => businessType.includes("일반") ? 110000 : 88000;
+  const displayFinalAmount = (item) => {
+    if (item.service === "vatax") return defaultVataxFee(item.business_type);
+    if (item.final_payment_amount || item.payment_due || item.final_tax_due) {
+      return item.final_payment_amount || item.payment_due || item.final_tax_due;
+    }
+    return null;
+  };
+
+  const getKeyword = () => normalize(document.querySelector("[data-admin-search]")?.value);
+  const getServiceFilter = () => document.querySelector("[data-service-filter]")?.value || "";
+  const getProcessFilter = () => document.querySelector("[data-process-filter]")?.value || "";
+
+  const setEmpty = (target, colspan, message) => {
+    if (target) target.innerHTML = `<tr><td colspan="${colspan}" class="empty-cell">${message}</td></tr>`;
+  };
+
+  const renderApplications = () => {
+    const body = document.querySelector("[data-admin-all-list]");
+    if (!body) return;
+    const keyword = getKeyword();
+    const serviceFilter = getServiceFilter();
+    const processFilter = getProcessFilter();
+
+    const filtered = applications.filter((item) => {
+      if (serviceFilter && item.service !== serviceFilter) return false;
+      if (processFilter && item.process_status !== processFilter) return false;
+      if (!keyword) return true;
+      return [
+        serviceLabel(item.service),
+        item.customer_name,
+        item.company,
+        item.phone,
+        item.period,
+        item.business_type,
+        item.process_status,
+        item.payment_status,
+        item.manager
+      ].some((value) => normalize(value).includes(keyword));
+    });
+
+    body.innerHTML = "";
+    if (!filtered.length) {
+      setEmpty(body, 12, "신청 내역이 없습니다.");
+      return;
+    }
+
+    filtered.forEach((item) => {
+      const row = document.createElement("tr");
+      row.dataset.applicationRow = item.id;
+      const values = [
+        `${serviceLabel(item.service)} / ${item.period || "-"}`,
+        item.company || item.customer_name || "-",
+        item.business_type || "-",
+        item.type || "-",
+        item.process_status || "-",
+        item.payment_status || "-",
+        item.before_deadline ? "전달완료" : "-",
+        core.money(displayFinalAmount(item)),
+        item.manager || "-",
+        item.phone || "-",
+        item.updated_by || "-",
+        core.formatDateTime(item.updated_at || item.created_at)
+      ];
+
+      values.forEach((value, index) => {
+        const cell = document.createElement("td");
+        if (index === 0) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "admin-row-link";
+          button.dataset.applicationToggle = item.id;
+          button.setAttribute("aria-expanded", String(expandedApplicationId === item.id));
+          button.textContent = value;
+          cell.append(button);
+        } else {
+          cell.textContent = value;
+        }
+        row.append(cell);
+      });
+      body.append(row);
+
+      if (expandedApplicationId === item.id) {
+        const detailRow = document.createElement("tr");
+        detailRow.className = "admin-detail-dropdown-row";
+        const detailCell = document.createElement("td");
+        detailCell.colSpan = 12;
+        const wrapper = document.createElement("div");
+        wrapper.className = "admin-detail-dropdown";
+        const frame = document.createElement("iframe");
+        frame.className = "admin-detail-frame";
+        frame.title = `${serviceLabel(item.service)} 신청 상세`;
+        frame.src = `application-detail.html?id=${encodeURIComponent(item.id)}&detailVersion=20260501-v9`;
+        wrapper.append(frame);
+        detailCell.append(wrapper);
+        detailRow.append(detailCell);
+        body.append(detailRow);
+      }
+    });
+  };
+
+  const renderMembers = () => {
+    const body = document.querySelector("[data-admin-members-list]");
+    if (!body) return;
+    const keyword = getKeyword();
+    const filtered = members.filter((item) => {
+      if (!keyword) return true;
+      return [
+        item.role,
+        item.user_id,
+        item.name,
+        item.phone,
+        item.business_type,
+        item.biz_number
+      ].some((value) => normalize(value).includes(keyword));
+    });
+
+    body.innerHTML = "";
+    if (!filtered.length) {
+      setEmpty(body, 8, "회원정보가 없습니다.");
+      return;
+    }
+
+    filtered.forEach((item) => {
+      const row = document.createElement("tr");
+      [
+        item.role || "customer",
+        item.user_id || "-",
+        item.name || "-",
+        item.phone || "-",
+        item.business_type || "-",
+        item.biz_number || "-",
+        core.formatDateTime(item.created_at),
+        core.formatDateTime(item.updated_at)
+      ].forEach((value) => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.append(cell);
+      });
+      body.append(row);
+    });
+  };
+
+  const renderCurrent = () => {
+    if (activeTab === "members") renderMembers();
+    else renderApplications();
+  };
+
+  const setTab = (nextTab) => {
+    activeTab = nextTab;
+    document.querySelectorAll("[data-admin-tab]").forEach((button) => {
+      button.classList.toggle("active", button.dataset.adminTab === activeTab);
+    });
+    document.querySelectorAll("[data-admin-panel]").forEach((panel) => {
+      panel.hidden = panel.dataset.adminPanel !== activeTab;
+    });
+    document.querySelector("[data-service-filter]")?.toggleAttribute("hidden", activeTab !== "applications");
+    document.querySelector("[data-process-filter]")?.toggleAttribute("hidden", activeTab !== "applications");
+    renderCurrent();
+  };
+
+  const setServiceShortcut = (service) => {
+    const serviceFilter = document.querySelector("[data-service-filter]");
+    const processFilter = document.querySelector("[data-process-filter]");
+    if (serviceFilter) serviceFilter.value = service || "";
+    if (processFilter) processFilter.value = "";
+    setTab("applications");
+  };
+
+  const load = async () => {
+    const appBody = document.querySelector("[data-admin-all-list]");
+    const memberBody = document.querySelector("[data-admin-members-list]");
+    setEmpty(appBody, 12, "불러오는 중입니다.");
+    setEmpty(memberBody, 8, "불러오는 중입니다.");
+
+    try {
+      await core.requireAdmin();
+      const [applicationResult, memberResult] = await Promise.all([
+        core.getClient().from("applications").select("*").order("created_at", { ascending: false }),
+        core.getClient().from("profiles").select("*").order("created_at", { ascending: false })
+      ]);
+      if (applicationResult.error) throw applicationResult.error;
+      if (memberResult.error) throw memberResult.error;
+      applications = applicationResult.data || [];
+      members = memberResult.data || [];
+      renderApplications();
+      renderMembers();
+      setTab("applications");
+    } catch (error) {
+      console.error(error);
+      setEmpty(appBody, 12, "관리자 권한 또는 Supabase 설정을 확인해주세요.");
+      setEmpty(memberBody, 8, "관리자 권한 또는 Supabase 설정을 확인해주세요.");
+    }
+  };
+
+  document.querySelectorAll("[data-admin-tab]").forEach((button) => {
+    button.addEventListener("click", () => setTab(button.dataset.adminTab));
+  });
+  document.querySelectorAll("[data-service-shortcut]").forEach((button) => {
+    button.addEventListener("click", () => setServiceShortcut(button.dataset.serviceShortcut));
+  });
+  document.querySelector("[data-admin-logout]")?.addEventListener("click", async () => {
+    await core.getClient().auth.signOut();
+    core.clearSessionProfile?.();
+    window.location.href = "login.html";
+  });
+  document.querySelector("[data-admin-search]")?.addEventListener("input", renderCurrent);
+  document.querySelector("[data-service-filter]")?.addEventListener("change", renderApplications);
+  document.querySelector("[data-process-filter]")?.addEventListener("change", renderApplications);
+  document.querySelector("[data-admin-all-list]")?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-application-toggle]");
+    if (!button) return;
+    expandedApplicationId = expandedApplicationId === button.dataset.applicationToggle ? "" : button.dataset.applicationToggle;
+    renderApplications();
+  });
+
+  load();
+})();
