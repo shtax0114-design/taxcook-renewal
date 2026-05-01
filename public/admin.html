@@ -34,6 +34,7 @@
           <div class="admin-dropdown">
             <button type="button" data-service-shortcut="gitax"><span class="admin-menu-icon">▱</span>종합소득세신고 신청</button>
             <button type="button" data-service-shortcut="vatax"><span class="admin-menu-icon">▱</span>부가세신고 신청</button>
+            <button type="button" data-admin-tab="discounts"><span class="admin-menu-icon">▣</span>할인코드 관리</button>
             <button type="button" data-admin-tab="applications"><span class="admin-menu-icon">▣</span>전체 신청</button>
           </div>
         </div>
@@ -52,6 +53,7 @@
         <button class="ops-button active" type="button" data-admin-tab="applications">전체 신청</button>
         <button class="ops-button" type="button" data-admin-tab="members">회원정보</button>
         <button class="ops-button" type="button" data-admin-tab="popups">메인팝업</button>
+        <button class="ops-button" type="button" data-admin-tab="discounts">할인코드</button>
         <a class="ops-button" href="admin-vatax.html">부가세만</a>
         <a class="ops-button" href="admin-gitax.html">종소세만</a>
         <select class="admin-filter" data-service-filter aria-label="서비스 필터">
@@ -139,6 +141,31 @@
         </div>
       </section>
 
+      <section data-admin-panel="discounts" hidden>
+        <div class="popup-admin-title">할인코드 조회</div>
+        <div class="popup-admin-toolbar">
+          <button class="grid-tool add" type="button" data-discount-add><span>＋</span>추가</button>
+          <button class="grid-tool danger" type="button" data-discount-delete-selected><span>×</span>선택삭제</button>
+          <span class="popup-admin-message" data-discount-message hidden></span>
+        </div>
+        <div class="popup-admin-wrap">
+          <table class="discount-admin-table">
+            <thead>
+              <tr>
+                <th><input type="checkbox" data-discount-check-all aria-label="전체 선택"></th>
+                <th></th>
+                <th>할인코드</th>
+                <th>할인금액</th>
+                <th>사용여부</th>
+                <th>최종수정자</th>
+                <th>최종수정일</th>
+              </tr>
+            </thead>
+            <tbody data-discount-list></tbody>
+          </table>
+        </div>
+      </section>
+
       <div class="popup-modal-backdrop" data-popup-modal hidden>
         <form class="popup-modal" data-popup-form>
           <input type="hidden" name="id">
@@ -167,6 +194,33 @@
           </label>
           <div class="popup-modal-actions">
             <button class="legacy-button danger" type="button" data-popup-close>취소</button>
+            <button class="legacy-button" type="submit">확인</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="popup-modal-backdrop" data-discount-modal hidden>
+        <form class="popup-modal discount-modal" data-discount-form>
+          <input type="hidden" name="id">
+          <button class="popup-modal-close" type="button" data-discount-close aria-label="닫기">×</button>
+          <h2 data-discount-modal-title>할인코드 추가</h2>
+          <label class="popup-modal-row">
+            <span>할인코드</span>
+            <input type="text" name="code" maxlength="40" required>
+          </label>
+          <label class="popup-modal-row">
+            <span>할인금액</span>
+            <input type="number" name="amount" min="0" step="1000" required>
+          </label>
+          <label class="popup-modal-row">
+            <span>사용여부</span>
+            <select name="isActive">
+              <option value="true">사용</option>
+              <option value="false">미사용</option>
+            </select>
+          </label>
+          <div class="popup-modal-actions">
+            <button class="legacy-button danger" type="button" data-discount-close>취소</button>
             <button class="legacy-button" type="submit">확인</button>
           </div>
         </form>

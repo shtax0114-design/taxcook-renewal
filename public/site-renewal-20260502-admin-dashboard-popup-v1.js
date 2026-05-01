@@ -5,7 +5,9 @@
   let applications = [];
   let members = [];
   let popups = [];
+  let discounts = [];
   let popupLoadError = "";
+  let discountLoadError = "";
   let activeTab = "applications";
   let expandedApplicationId = "";
   let adminProfile = null;
@@ -47,6 +49,21 @@
 
   const clearPopupMessage = () => {
     const target = document.querySelector("[data-popup-message]");
+    if (!target) return;
+    target.textContent = "";
+    target.hidden = true;
+  };
+
+  const setDiscountMessage = (message, type = "error") => {
+    const target = document.querySelector("[data-discount-message]");
+    if (!target) return;
+    target.textContent = message;
+    target.dataset.type = type;
+    target.hidden = false;
+  };
+
+  const clearDiscountMessage = () => {
+    const target = document.querySelector("[data-discount-message]");
     if (!target) return;
     target.textContent = "";
     target.hidden = true;
@@ -206,9 +223,38 @@
     });
   };
 
+  const renderDiscounts = () => {
+    const body = document.querySelector("[data-discount-list]");
+    if (!body) return;
+    body.innerHTML = "";
+    if (discountLoadError) {
+      setEmpty(body, 7, discountLoadError);
+      return;
+    }
+    if (!discounts.length) {
+      setEmpty(body, 7, "등록된 할인코드가 없습니다.");
+      return;
+    }
+
+    discounts.forEach((item) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td class="popup-check-cell"><input type="checkbox" data-discount-check value="${item.id}" aria-label="할인코드 선택"></td>
+        <td class="popup-edit-cell"><button type="button" data-discount-edit="${item.id}" aria-label="수정">⌕</button></td>
+        <td>${item.code || "-"}</td>
+        <td>${core.money(item.amount)}</td>
+        <td>${item.is_active ? "사용" : "미사용"}</td>
+        <td>${item.updated_by || item.created_by || "-"}</td>
+        <td>${core.formatDateTime(item.updated_at || item.created_at)}</td>
+      `;
+      body.append(row);
+    });
+  };
+
   const renderCurrent = () => {
     if (activeTab === "members") renderMembers();
     else if (activeTab === "popups") renderPopups();
+    else if (activeTab === "discounts") renderDiscounts();
     else renderApplications();
   };
 
@@ -237,9 +283,11 @@
     const appBody = document.querySelector("[data-admin-all-list]");
     const memberBody = document.querySelector("[data-admin-members-list]");
     const popupBody = document.querySelector("[data-popup-list]");
+    const discountBody = document.querySelector("[data-discount-list]");
     setEmpty(appBody, 12, "불러오는 중입니다.");
     setEmpty(memberBody, 8, "불러오는 중입니다.");
     setEmpty(popupBody, 7, "불러오는 중입니다.");
+    setEmpty(discountBody, 7, "불러오는 중입니다.");
 
     try {
       const admin = await core.requireAdmin();
@@ -263,6 +311,17 @@
         popups = popupResult.data || [];
         renderPopups();
       }
+
+      const discountResult = await core.getClient().from("discount_codes").select("*").order("created_at", { ascending: false });
+      if (discountResult.error) {
+        discounts = [];
+        discountLoadError = "할인코드 테이블을 먼저 생성해주세요.";
+        setEmpty(discountBody, 7, discountLoadError);
+      } else {
+        discountLoadError = "";
+        discounts = discountResult.data || [];
+        renderDiscounts();
+      }
       renderApplications();
       renderMembers();
       setTab("applications");
@@ -271,6 +330,7 @@
       setEmpty(appBody, 12, "관리자 권한 또는 Supabase 설정을 확인해주세요.");
       setEmpty(memberBody, 8, "관리자 권한 또는 Supabase 설정을 확인해주세요.");
       setEmpty(popupBody, 7, "메인 팝업 테이블 또는 Storage 설정을 확인해주세요.");
+      setEmpty(discountBody, 7, "할인코드 테이블 설정을 확인해주세요.");
     }
   };
 
@@ -391,6 +451,95 @@
     }
   };
 
+  const discountModal = () => document.querySelector("[data-discount-modal]");
+  const discountForm = () => document.querySelector("[data-discount-form]");
+
+  const openDiscountModal = (item = null) => {
+    const modal = discountModal();
+    const form = discountForm();
+    if (!modal || !form) return;
+    form.reset();
+    form.elements.id.value = item?.id || "";
+    form.elements.code.value = item?.code || "";
+    form.elements.amount.value = item?.amount || "";
+    form.elements.isActive.value = String(item?.is_active ?? true);
+    document.querySelector("[data-discount-modal-title]").textContent = item ? "할인코드 수정" : "할인코드 추가";
+    modal.hidden = false;
+  };
+
+  const closeDiscountModal = () => {
+    const modal = discountModal();
+    if (modal) modal.hidden = true;
+  };
+
+  const selectedDiscountIds = () =>
+    Array.from(document.querySelectorAll("[data-discount-check]:checked")).map((input) => input.value);
+
+  const reloadDiscounts = async () => {
+    const result = await core.getClient().from("discount_codes").select("*").order("created_at", { ascending: false });
+    if (result.error) throw result.error;
+    discountLoadError = "";
+    discounts = result.data || [];
+    renderDiscounts();
+  };
+
+  const saveDiscount = async (event) => {
+    event.preventDefault();
+    clearDiscountMessage();
+    const form = event.currentTarget;
+    const submitButton = form.querySelector("button[type='submit']");
+    core.setBusy(submitButton, true, "저장 중...");
+    try {
+      const code = String(form.elements.code.value || "").trim();
+      const amount = Number(form.elements.amount.value || 0);
+      if (!code) throw new Error("할인코드를 입력해주세요.");
+      if (!amount || amount < 0) throw new Error("할인금액을 입력해주세요.");
+
+      const row = {
+        code,
+        amount,
+        is_active: form.elements.isActive.value === "true",
+        updated_by: adminProfile?.name || adminProfile?.user_id || ""
+      };
+      const id = form.elements.id.value;
+      const result = id
+        ? await core.getClient().from("discount_codes").update(row).eq("id", id).select("*").single()
+        : await core.getClient().from("discount_codes").insert({
+            ...row,
+            created_by: adminProfile?.name || adminProfile?.user_id || ""
+          }).select("*").single();
+      if (result.error) throw result.error;
+
+      await reloadDiscounts();
+      closeDiscountModal();
+      setDiscountMessage("저장되었습니다.", "success");
+    } catch (error) {
+      console.error(error);
+      setDiscountMessage(error.message || "할인코드 저장 중 오류가 발생했습니다.");
+    } finally {
+      core.setBusy(submitButton, false);
+    }
+  };
+
+  const deleteSelectedDiscounts = async () => {
+    const ids = selectedDiscountIds();
+    if (!ids.length) {
+      setDiscountMessage("삭제할 할인코드를 선택해주세요.");
+      return;
+    }
+    if (!confirm("선택한 할인코드를 삭제할까요?")) return;
+    clearDiscountMessage();
+    try {
+      const { error } = await core.getClient().from("discount_codes").delete().in("id", ids);
+      if (error) throw error;
+      await reloadDiscounts();
+      setDiscountMessage("삭제되었습니다.", "success");
+    } catch (error) {
+      console.error(error);
+      setDiscountMessage(error.message || "삭제 중 오류가 발생했습니다.");
+    }
+  };
+
   document.querySelectorAll("[data-admin-tab]").forEach((button) => {
     button.addEventListener("click", () => setTab(button.dataset.adminTab));
   });
@@ -437,6 +586,23 @@
     if (!edit) return;
     const item = popups.find((popup) => popup.id === edit.dataset.popupEdit);
     if (item) openPopupModal(item);
+  });
+  document.querySelector("[data-discount-add]")?.addEventListener("click", () => openDiscountModal());
+  document.querySelectorAll("[data-discount-close]").forEach((button) => {
+    button.addEventListener("click", closeDiscountModal);
+  });
+  discountForm()?.addEventListener("submit", saveDiscount);
+  document.querySelector("[data-discount-delete-selected]")?.addEventListener("click", deleteSelectedDiscounts);
+  document.querySelector("[data-discount-check-all]")?.addEventListener("change", (event) => {
+    document.querySelectorAll("[data-discount-check]").forEach((input) => {
+      input.checked = event.target.checked;
+    });
+  });
+  document.querySelector("[data-discount-list]")?.addEventListener("click", (event) => {
+    const edit = event.target.closest("[data-discount-edit]");
+    if (!edit) return;
+    const item = discounts.find((discount) => discount.id === edit.dataset.discountEdit);
+    if (item) openDiscountModal(item);
   });
 
   load();

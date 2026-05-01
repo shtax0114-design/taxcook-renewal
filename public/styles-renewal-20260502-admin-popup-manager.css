@@ -43,8 +43,17 @@
   table-layout: fixed;
 }
 
+.discount-admin-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
 .popup-admin-table th,
-.popup-admin-table td {
+.popup-admin-table td,
+.discount-admin-table th,
+.discount-admin-table td {
   height: 162px;
   border-bottom: 1px solid #e1e6ed;
   color: #1e344d;
@@ -54,6 +63,7 @@
   padding: 8px 14px;
 }
 
+.discount-admin-table th,
 .popup-admin-table th {
   height: 38px;
   background: #f5f7f9;
@@ -61,13 +71,21 @@
   font-weight: 900;
 }
 
+.discount-admin-table td {
+  height: 48px;
+}
+
 .popup-admin-table th:nth-child(1),
-.popup-admin-table td:nth-child(1) {
+.popup-admin-table td:nth-child(1),
+.discount-admin-table th:nth-child(1),
+.discount-admin-table td:nth-child(1) {
   width: 44px;
 }
 
 .popup-admin-table th:nth-child(2),
-.popup-admin-table td:nth-child(2) {
+.popup-admin-table td:nth-child(2),
+.discount-admin-table th:nth-child(2),
+.discount-admin-table td:nth-child(2) {
   width: 52px;
 }
 
@@ -77,6 +95,12 @@
 }
 
 .popup-admin-table input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #3d8bff;
+}
+
+.discount-admin-table input[type="checkbox"] {
   width: 20px;
   height: 20px;
   accent-color: #3d8bff;
