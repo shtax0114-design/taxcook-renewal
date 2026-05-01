@@ -1,0 +1,13 @@
+.hero-trust span {
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.hero-trust span:hover,
+.hero-trust span:active {
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
