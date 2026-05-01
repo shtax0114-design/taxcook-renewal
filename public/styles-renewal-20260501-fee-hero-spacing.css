@@ -1,0 +1,49 @@
+.sub-hero {
+  padding-bottom: 36px;
+}
+
+.sub-hero p:not(.section-eyebrow) {
+  margin-bottom: 22px;
+}
+
+.deposit-notice {
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.fee-section {
+  padding-top: 48px;
+}
+
+@media (max-width: 920px) {
+  .sub-hero {
+    padding-bottom: 32px;
+  }
+
+  .deposit-notice {
+    margin-top: 22px;
+  }
+
+  .fee-section {
+    padding-top: 42px;
+  }
+}
+
+@media (max-width: 620px) {
+  .sub-hero {
+    padding-bottom: 30px;
+  }
+
+  .sub-hero p:not(.section-eyebrow) {
+    margin-bottom: 18px;
+  }
+
+  .deposit-notice {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .fee-section {
+    padding-top: 38px;
+  }
+}
