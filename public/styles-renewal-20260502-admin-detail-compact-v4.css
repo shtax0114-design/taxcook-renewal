@@ -1,0 +1,15 @@
+.gitax-process-panel .gitax-stack-top-cell select {
+  position: relative;
+  top: 66px;
+  z-index: 2;
+}
+
+.gitax-process-panel .gitax-extra-select-cell {
+  position: relative;
+  top: 34px;
+  z-index: 2;
+}
+
+.gitax-process-panel .gitax-extra-select-cell > .sr-only {
+  display: none !important;
+}
