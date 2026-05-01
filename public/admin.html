@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="styles-renewal-20260501-admin-dashboard-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-search-horizontal.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-popup-manager.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260502-admin-dashboard-popup-v4.js"></script>
+    <script defer src="site-renewal-20260502-admin-dashboard-popup-v5.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
@@ -78,15 +79,15 @@
             <thead>
               <tr>
                 <th>신청내용</th>
-                <th>고객/업체</th>
-                <th>사업자구분</th>
+                <th>고객/업체 <button class="column-filter-button" type="button" data-column-filter="customer" aria-label="고객/업체 검색"><span class="column-filter-icon"></span></button></th>
+                <th>사업자구분 <button class="column-filter-button" type="button" data-column-filter="businessType" aria-label="사업자구분 검색"><span class="column-filter-icon"></span></button></th>
                 <th>신고유형</th>
-                <th>처리상태</th>
+                <th>처리상태 <button class="column-filter-button" type="button" data-column-filter="processStatus" aria-label="처리상태 검색"><span class="column-filter-icon"></span></button></th>
                 <th>결제상태</th>
                 <th>납부서</th>
                 <th>최종결제금액</th>
-                <th>담당자</th>
-                <th>휴대폰번호</th>
+                <th>담당자 <button class="column-filter-button" type="button" data-column-filter="manager" aria-label="담당자 검색"><span class="column-filter-icon"></span></button></th>
+                <th>휴대폰번호 <button class="column-filter-button" type="button" data-column-filter="phone" aria-label="휴대폰번호 검색"><span class="column-filter-icon"></span></button></th>
                 <th>최종수정자</th>
                 <th>변경일시</th>
               </tr>
@@ -95,6 +96,8 @@
           </table>
         </div>
       </section>
+
+      <div class="column-filter-panel" data-column-filter-panel hidden></div>
 
       <section data-admin-panel="members" hidden>
         <div class="ops-table-wrap">
