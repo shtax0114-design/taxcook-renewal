@@ -1,0 +1,33 @@
+.subpage .sub-hero {
+  background: #dedfdf;
+}
+
+.subpage .sub-hero .section-eyebrow {
+  color: #5570a7;
+}
+
+.subpage .sub-hero h1 {
+  color: #071d51;
+}
+
+.subpage .sub-hero p:not(.section-eyebrow) {
+  color: #294268;
+}
+
+.subpage .sub-hero .deposit-notice {
+  background: #ffffff;
+  border-color: rgba(222, 228, 238, 0.96);
+}
+
+.subpage .sub-hero .apply-shortcut {
+  background: #071d51;
+  border-color: #071d51;
+  color: #f7f8fb;
+}
+
+.subpage .sub-hero .apply-shortcut:hover,
+.subpage .sub-hero .apply-shortcut:focus,
+.subpage .sub-hero .apply-shortcut:active,
+.subpage .sub-hero .apply-shortcut:visited {
+  color: #f7f8fb;
+}
