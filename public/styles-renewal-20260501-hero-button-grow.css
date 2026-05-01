@@ -1,0 +1,11 @@
+@media (hover: hover) and (pointer: fine) {
+  .hero-actions .btn-main:hover,
+  .hero-actions .btn-ghost:hover {
+    transform: translateY(-2px) scale(1.045);
+  }
+
+  .hero-actions .btn-main:active,
+  .hero-actions .btn-ghost:active {
+    transform: translateY(0) scale(1.015);
+  }
+}
