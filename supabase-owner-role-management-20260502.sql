@@ -65,6 +65,15 @@ begin
 
   perform public.verify_owner_passcode(owner_passcode);
 
+  if exists (
+    select 1
+    from public.profiles
+    where id = target_profile_id
+      and lower(user_id) = 'chaewoon83@gmail.com'
+  ) then
+    raise exception '대표 계정 권한은 변경할 수 없습니다.';
+  end if;
+
   update public.profiles
   set role = next_role,
       updated_at = now()
