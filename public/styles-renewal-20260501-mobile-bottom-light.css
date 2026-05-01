@@ -1,0 +1,8 @@
+.mobile-sticky-cta a,
+.mobile-sticky-cta a:link,
+.mobile-sticky-cta a:visited,
+.mobile-sticky-cta a:hover,
+.mobile-sticky-cta a:focus,
+.mobile-sticky-cta a:active {
+  font-weight: 500;
+}
