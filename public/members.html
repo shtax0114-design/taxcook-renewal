@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원관리 | 택스쿡</title>
+    <meta name="description" content="택스쿡 회원관리 페이지입니다.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-membergrid-admin.css">
+    <script defer src="site-renewal-20260501-membergrid-save.js"></script>
+  </head>
+  <body class="member-admin-page">
+    <a class="skip" href="#main">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="택스쿡 홈"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
+        <nav class="nav" data-nav data-open="false" aria-label="주요 메뉴">
+          <a href="knowhow.html">택스쿡 소개</a>
+          <a href="vatax.html">부가가치세 신고</a>
+          <a href="gitax.html">종합소득세 신고</a>
+          <a href="https://tax-cook.com/office">스마일워크</a>
+        </nav>
+        <div class="header-actions">
+          <a class="login-link" href="login.html">로그인</a>
+          <a class="nav-cta" href="members.html">회원관리</a>
+          <button class="menu-button" type="button" data-menu-button aria-label="메뉴 열기" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="member-grid-main">
+      <section class="member-grid-shell" aria-labelledby="member-title">
+        <div class="member-grid-title">
+          <h1 id="member-title">고객 정보 조회</h1>
+        </div>
+        <div class="member-grid-toolbar" aria-label="회원관리 도구">
+          <a class="grid-tool add" href="signup.html"><span aria-hidden="true">＋</span>추가</a>
+          <button class="grid-tool danger" type="button" data-delete-selected><span aria-hidden="true">×</span>선택삭제</button>
+          <button class="grid-tool" type="button" data-download-members><span aria-hidden="true">⇩</span>다운로드</button>
+          <span class="current-user" data-current-user>로그인 전</span>
+        </div>
+        <div class="member-grid-wrap">
+          <table class="member-grid-table">
+            <thead>
+              <tr>
+                <th class="check-cell"><input type="checkbox" data-select-all aria-label="전체 선택"></th>
+                <th>관리</th>
+                <th>권한</th>
+                <th>유형</th>
+                <th>* 로그인ID</th>
+                <th>* 비밀번호</th>
+                <th>* 이름</th>
+                <th>* 휴대폰번호</th>
+                <th>최종수정자</th>
+                <th>최종수정일</th>
+              </tr>
+            </thead>
+            <tbody data-members-body></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <img class="footer-logo" src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡">
+          <p>세금 신고, 쉽고 정확하게</p>
+        </div>
+        <div class="footer-info">
+          <strong>스마일택스</strong>
+          <p>대표자: 신현찬 | 사업자번호: 701-15-00131<br>주소: 인천시 서구 바리미로 31, 지오프라자 307~308호<br>통신판매업신고번호: 제2022-인천남동구-0761호<br>고객센터: 010-6505-0114 | 운영시간: 09:00 ~ 18:00</p>
+        </div>
+        <div class="footer-links">
+          <a href="login.html">로그인</a>
+          <a href="signup.html">회원가입</a>
+          <a href="members.html">회원관리</a>
+          <a href="https://tax-cook.com/doc1">이용약관</a>
+          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+        </div>
+      </div>
+      <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

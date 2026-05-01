@@ -1,0 +1,354 @@
+.knowhow-page {
+  background: #f8fbff;
+}
+
+.knowhow-hero {
+  padding: 132px 0 74px;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(219, 234, 254, 0.84) 0%, rgba(219, 234, 254, 0) 34%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #fbfdff 0%, #f3f8ff 100%);
+}
+
+.knowhow-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.76fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.knowhow-hero h1,
+.knowhow-intro h2,
+.knowhow-promise h2,
+.knowhow-cta h2 {
+  color: #071d51;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.knowhow-hero h1 {
+  margin: 12px 0 26px;
+  font-size: clamp(42px, 5.8vw, 68px);
+  line-height: 1.18;
+}
+
+.knowhow-hero p:not(.section-eyebrow) {
+  max-width: 680px;
+  color: #1b2f57;
+  font-size: 21px;
+  line-height: 1.85;
+}
+
+.knowhow-actions,
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.knowhow-actions .btn-main,
+.knowhow-actions .btn-ghost,
+.cta-actions .btn-main,
+.cta-actions .btn-ghost {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.knowhow-hero-visual {
+  border: 1px solid #dbe4f2;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 18px;
+  box-shadow: 0 22px 54px rgba(16, 54, 125, 0.12);
+}
+
+.knowhow-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.knowhow-intro,
+.knowhow-services,
+.knowhow-process,
+.knowhow-promise,
+.knowhow-cta {
+  padding: 78px 0;
+}
+
+.intro-grid,
+.promise-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.intro-copy h2,
+.promise-copy h2,
+.knowhow-cta h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.25;
+}
+
+.intro-copy p:not(.section-eyebrow),
+.promise-copy p:not(.section-eyebrow),
+.knowhow-cta p {
+  color: #33466c;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.intro-panel,
+.promise-list article,
+.knowhow-card,
+.process-line article,
+.cta-box {
+  border: 1px solid #dbe4f2;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 42px rgba(16, 54, 125, 0.08);
+}
+
+.intro-panel {
+  padding: 30px;
+}
+
+.intro-panel strong {
+  display: block;
+  margin-bottom: 16px;
+  color: #071d51;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.intro-panel ul {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.intro-panel li {
+  position: relative;
+  padding-left: 24px;
+  color: #33466c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.intro-panel li::before {
+  content: "";
+  position: absolute;
+  top: 0.68em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2f7eea;
+}
+
+.knowhow-services {
+  background: #ffffff;
+}
+
+.knowhow-services .section-heading,
+.knowhow-process .section-heading {
+  text-align: center;
+}
+
+.knowhow-services .section-heading p:not(.section-eyebrow) {
+  max-width: 640px;
+  margin: 12px auto 0;
+}
+
+.knowhow-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.knowhow-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 18px;
+}
+
+.knowhow-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #eef5ff;
+}
+
+.knowhow-card span,
+.process-line span {
+  display: block;
+  margin-top: 22px;
+  color: #2f7eea;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.knowhow-card h3,
+.process-line h3 {
+  margin: 9px 0 10px;
+  color: #071d51;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.knowhow-card p,
+.process-line p,
+.promise-list p {
+  color: #33466c;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.knowhow-card a {
+  margin-top: auto;
+  color: #10367d;
+  font-weight: 900;
+}
+
+.process-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.process-line article {
+  padding: 26px;
+}
+
+.process-line span {
+  margin-top: 0;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.knowhow-promise {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(191, 219, 254, 0.64) 0%, rgba(191, 219, 254, 0) 36%),
+    #f3f8ff;
+}
+
+.promise-list {
+  display: grid;
+  gap: 14px;
+}
+
+.promise-list article {
+  padding: 24px 26px;
+}
+
+.promise-list strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #071d51;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.cta-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 34px;
+}
+
+.cta-box h2 {
+  margin-top: 8px;
+}
+
+.cta-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.nav a[aria-current="page"] {
+  color: #10367d;
+  font-weight: 900;
+}
+
+@media (max-width: 980px) {
+  .knowhow-hero-inner,
+  .intro-grid,
+  .promise-grid,
+  .cta-box {
+    grid-template-columns: 1fr;
+  }
+
+  .knowhow-card-grid,
+  .process-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .knowhow-hero {
+    padding: 112px 0 54px;
+  }
+
+  .knowhow-hero h1 {
+    font-size: 34px;
+    line-height: 1.32;
+  }
+
+  .knowhow-hero p:not(.section-eyebrow),
+  .intro-copy p:not(.section-eyebrow),
+  .promise-copy p:not(.section-eyebrow),
+  .knowhow-cta p {
+    font-size: 16px;
+  }
+
+  .knowhow-intro,
+  .knowhow-services,
+  .knowhow-process,
+  .knowhow-promise,
+  .knowhow-cta {
+    padding: 56px 0;
+  }
+
+  .knowhow-card-grid,
+  .process-line {
+    grid-template-columns: 1fr;
+  }
+
+  .knowhow-hero-visual,
+  .intro-panel,
+  .process-line article,
+  .promise-list article,
+  .cta-box {
+    padding: 22px;
+  }
+
+  .knowhow-card h3,
+  .process-line h3,
+  .promise-list strong {
+    font-size: 22px;
+  }
+
+  .knowhow-actions .btn-main,
+  .knowhow-actions .btn-ghost,
+  .cta-actions .btn-main,
+  .cta-actions .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}

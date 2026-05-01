@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 | 택스쿡</title>
+    <meta name="description" content="택스쿡 로그인 페이지입니다.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-auth-title.css">
+    <script defer src="site-renewal-20260501-membergrid-save.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="택스쿡 홈"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
+        <nav class="nav" data-nav data-open="false" aria-label="주요 메뉴">
+          <a href="knowhow.html">택스쿡 소개</a>
+          <a href="vatax.html">부가가치세 신고</a>
+          <a href="gitax.html">종합소득세 신고</a>
+          <a href="https://tax-cook.com/office">스마일워크</a>
+        </nav>
+        <div class="header-actions">
+          <a class="login-link" href="login.html">로그인</a>
+          <a class="nav-cta" href="members.html">회원관리</a>
+          <button class="menu-button" type="button" data-menu-button aria-label="메뉴 열기" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="auth-main">
+      <section class="auth-shell" aria-labelledby="login-title">
+        <div class="auth-heading">
+          <h1 id="login-title">My<span class="title-blue">택스쿡</span> 로그인</h1>
+          <p>택스쿡 회원 계정으로 로그인하고<br>신청 내역과 회원 정보를 확인하세요.</p>
+        </div>
+        <form class="auth-form" data-login-form>
+          <label class="auth-row">
+            <span class="auth-label required">아이디</span>
+            <input type="text" name="userId" autocomplete="username">
+          </label>
+          <label class="auth-row">
+            <span class="auth-label required">비밀번호</span>
+            <input type="password" name="password" autocomplete="current-password">
+          </label>
+          <button class="auth-submit" type="submit">로그인</button>
+        </form>
+        <p class="auth-message" data-auth-message hidden></p>
+        <p class="auth-alt">아직 계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <img class="footer-logo" src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡">
+          <p>세금 신고, 쉽고 정확하게</p>
+        </div>
+        <div class="footer-info">
+          <strong>스마일택스</strong>
+          <p>대표자: 신현찬 | 사업자번호: 701-15-00131<br>주소: 인천시 서구 바리미로 31, 지오프라자 307~308호<br>통신판매업신고번호: 제2022-인천남동구-0761호<br>고객센터: 010-6505-0114 | 운영시간: 09:00 ~ 18:00</p>
+        </div>
+        <div class="footer-links">
+          <a href="login.html">로그인</a>
+          <a href="signup.html">회원가입</a>
+          <a href="members.html">회원관리</a>
+          <a href="https://tax-cook.com/doc1">이용약관</a>
+          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+        </div>
+      </div>
+      <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

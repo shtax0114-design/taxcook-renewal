@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My 택스쿡 | 택스쿡</title>
+    <meta name="description" content="택스쿡 신청 내역과 진행 상태를 확인하세요.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-ops-wrap.css">
+    <script defer src="site-renewal-20260501-status-options.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="택스쿡 홈"><img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡"></a>
+        <nav class="nav" data-nav data-open="false" aria-label="주요 메뉴">
+          <a href="knowhow.html">택스쿡 소개</a>
+          <a href="vatax.html">부가가치세 신고</a>
+          <a href="gitax.html">종합소득세 신고</a>
+          <a href="https://tax-cook.com/office">스마일워크</a>
+        </nav>
+        <div class="header-actions">
+          <a class="login-link" href="login.html">로그인</a>
+          <a class="nav-cta" href="mypage.html">My 택스쿡</a>
+        </div>
+      </div>
+    </header>
+    <main class="mypage-main">
+      <section class="mypage-shell">
+        <div class="mypage-title">
+          <h1><span data-my-name>택스쿡 고객</span>님의 신청 내역</h1>
+          <p>관리자가 고객에게 공유한 안내 메모와 처리 상태만 표시됩니다.</p>
+        </div>
+        <div class="mypage-card">
+          <table class="ops-table mypage-table">
+            <thead>
+              <tr>
+                <th>신고유형</th>
+                <th>귀속</th>
+                <th>처리상태</th>
+                <th>결제상태</th>
+                <th>고객 안내</th>
+                <th>최종수정일</th>
+              </tr>
+            </thead>
+            <tbody data-my-applications></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
