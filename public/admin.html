@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="styles-renewal-20260501-admin-dashboard-v3.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-search-horizontal.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-popup-manager.css">
-    <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters-v2.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters-v3.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260501-supabase-core-v7.js"></script>
-    <script defer src="site-renewal-20260502-admin-dashboard-popup-v6.js"></script>
+    <script defer src="site-renewal-20260502-admin-dashboard-popup-v7.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
@@ -26,8 +26,8 @@
         <div class="admin-menu-group">
           <button class="admin-menu-button" type="button"><span class="admin-menu-icon">♙</span>기본정보 <i class="admin-menu-caret"></i></button>
           <div class="admin-dropdown">
-            <button type="button" data-admin-tab="members"><span class="admin-menu-icon">▱</span>고객 정보</button>
-            <button type="button" data-admin-tab="members"><span class="admin-menu-icon">▱</span>관리자 정보</button>
+            <button type="button" data-admin-tab="members" data-member-filter="customer"><span class="admin-menu-icon">▱</span>고객 정보</button>
+            <button type="button" data-admin-tab="members" data-member-filter="admin"><span class="admin-menu-icon">▱</span>관리자 정보</button>
           </div>
         </div>
         <div class="admin-menu-group">

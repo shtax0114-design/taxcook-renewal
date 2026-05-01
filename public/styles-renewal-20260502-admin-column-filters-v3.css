@@ -1,0 +1,119 @@
+.admin-real-table th {
+  position: relative;
+  white-space: nowrap;
+}
+
+.column-filter-button {
+  width: 24px;
+  height: 24px;
+  margin-left: 7px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.column-filter-button:hover,
+.column-filter-button.is-open {
+  background: #e8edf4;
+}
+
+.column-filter-button.is-filtered {
+  background: #dcecff;
+}
+
+.column-filter-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #5f7084;
+  clip-path: polygon(4% 0, 96% 0, 62% 48%, 62% 100%, 38% 100%, 38% 48%);
+}
+
+.column-filter-button.is-filtered .column-filter-icon,
+.column-filter-button.is-open .column-filter-icon {
+  background: #0a4fa3;
+}
+
+.column-filter-panel {
+  position: fixed;
+  z-index: 80;
+  width: 224px;
+  padding: 14px 14px 16px;
+  border: 1px solid #d8dde5;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(16, 32, 56, 0.16);
+}
+
+.column-filter-control select,
+.column-filter-control input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #9ba8b8;
+  border-radius: 7px;
+  color: #1d3047;
+  font-size: 14px;
+  outline: none;
+}
+
+.column-filter-control select:focus,
+.column-filter-control input:focus {
+  border-color: #3195ff;
+  box-shadow: 0 0 0 3px rgba(49, 149, 255, 0.18);
+}
+
+.column-filter-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.column-filter-actions button {
+  min-width: 62px;
+  height: 34px;
+  border: 1px solid #2389ee;
+  border-radius: 3px;
+  background: #fff;
+  color: #2389ee;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.column-filter-actions button[data-column-filter-apply] {
+  margin-left: auto;
+  background: #2389ee;
+  color: #fff;
+}
+
+.delivery-status-cell {
+  text-align: center;
+}
+
+.delivery-status-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.delivery-status-icon.is-done {
+  border: 2px solid #00d45a;
+  color: #00d45a;
+}
+
+.delivery-status-icon.is-waiting {
+  border: 2px solid #000;
+  color: #000;
+}
+
+.admin-real-title h1 {
+  padding-left: 16px;
+}
