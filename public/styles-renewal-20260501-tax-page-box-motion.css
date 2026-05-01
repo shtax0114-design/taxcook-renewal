@@ -1,0 +1,30 @@
+.tax-page-motion {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0) scale(0.985);
+  transition:
+    opacity 0.85s ease,
+    transform 0.9s cubic-bezier(0.2, 0.78, 0.2, 1);
+  transition-delay: var(--tax-motion-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.tax-page-motion.tax-page-motion-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.tax-page-motion.apply-box {
+  transform: translate3d(0, 38px, 0) scale(0.99);
+}
+
+.tax-page-motion.apply-box.tax-page-motion-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tax-page-motion {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
