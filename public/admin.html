@@ -1,8 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>통합 관리자 | 택스쿡</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles-renewal-20260501-admin-clean.css">
@@ -10,10 +13,13 @@
     <link rel="stylesheet" href="styles-renewal-20260502-admin-search-horizontal.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-popup-manager.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-column-filters-v8.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-member-edit-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-fixed-workspace-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-admin-dropdown-width-v11.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260502-admin-dashboard-popup-v12.js"></script>
+    <script defer src="site-renewal-20260503-admin-dashboard-members-v24.js"></script>
   </head>
   <body class="ops-admin-page">
     <main class="ops-main">
@@ -101,6 +107,7 @@
       <div class="column-filter-panel" data-column-filter-panel hidden></div>
 
       <section data-admin-panel="members" hidden>
+        <div class="member-panel-title" data-member-panel-title>회원정보</div>
         <div class="permission-guard" data-permission-guard hidden>
           <form class="permission-guard-form" data-permission-form>
             <label>
@@ -116,9 +123,17 @@
           </div>
         </div>
         <div class="ops-table-wrap">
+          <div class="member-admin-toolbar">
+            <button class="grid-tool add" type="button" data-member-add><span>＋</span>추가</button>
+            <button class="grid-tool danger" type="button" data-member-delete-selected><span>×</span>선택삭제</button>
+            <button class="grid-tool" type="button" data-member-download><span>⇩</span>다운로드</button>
+            <span class="member-admin-message" data-member-message hidden></span>
+          </div>
           <table class="ops-table member-admin-table">
             <thead>
               <tr>
+                <th><input type="checkbox" data-member-check-all aria-label="전체 선택"></th>
+                <th>관리</th>
                 <th>권한</th>
                 <th>이메일</th>
                 <th>이름</th>
@@ -133,6 +148,31 @@
           </table>
         </div>
       </section>
+
+      <div class="member-edit-modal" data-member-modal hidden>
+        <form class="member-edit-dialog" data-member-form>
+          <div class="member-edit-head">
+            <strong data-member-form-title>회원정보 수정</strong>
+            <button type="button" data-member-modal-close aria-label="닫기">×</button>
+          </div>
+          <input type="hidden" name="id">
+          <div class="member-edit-grid">
+            <label><span>로그인ID</span><input type="text" name="userId" autocomplete="username" required></label>
+            <label data-member-password-row hidden><span>비밀번호</span><input type="password" name="password" autocomplete="new-password" minlength="6"></label>
+            <label data-member-role-row hidden><span>권한</span><select name="role"><option value="customer">고객</option><option value="admin">관리자</option><option value="developer">developer</option></select></label>
+            <label><span>이름</span><input type="text" name="name" required></label>
+            <label><span>휴대폰번호</span><input type="tel" name="phone" inputmode="numeric" required></label>
+            <label><span>생년월일</span><input type="text" name="birth" placeholder="YYYY-MM-DD"></label>
+            <label><span>사업자구분</span><select name="businessType"><option value="">선택</option><option>사업자</option><option>비사업자</option></select></label>
+            <label><span>사업자번호</span><input type="text" name="bizNumber" inputmode="numeric" maxlength="10"></label>
+          </div>
+          <p class="member-edit-note">권한 변경은 기존 권한 관리 메뉴에서 처리해 주세요.</p>
+          <div class="member-edit-actions">
+            <button class="legacy-button subtle" type="button" data-member-modal-close>취소</button>
+            <button class="legacy-button" type="submit">저장</button>
+          </div>
+        </form>
+      </div>
 
       <section data-admin-panel="popups" hidden>
         <div class="popup-admin-title">메인팝업</div>

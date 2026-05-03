@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "taxcook-renewal",
     "public": "public",
     "cleanUrls": true,
     "ignore": [

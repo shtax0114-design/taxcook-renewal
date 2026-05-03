@@ -20,6 +20,12 @@
     google: "구글"
   };
 
+  const socialProviderId = {
+    kakao: "kakao",
+    naver: "custom:naver",
+    google: "google"
+  };
+
   const socialErrorMessage = (provider, error) => {
     const name = socialProviderName[provider] || "간편 인증";
     const message = String(error?.message || "");
@@ -111,13 +117,19 @@
       core.setBusy(button, true, `${label} 연결 중...`);
 
       try {
-        const { error } = await core.getClient().auth.signInWithOAuth({
-          provider,
+        const { data, error } = await core.getClient().auth.signInWithOAuth({
+          provider: socialProviderId[provider] || provider,
           options: {
-            redirectTo: getRedirectUrl()
+            redirectTo: getRedirectUrl(),
+            skipBrowserRedirect: true
           }
         });
         if (error) throw error;
+        if (data?.url) {
+          window.location.href = data.url;
+          return;
+        }
+        throw new Error("소셜 로그인 이동 주소를 받지 못했습니다.");
       } catch (error) {
         console.error(`TaxCook ${provider} login failed`, error);
         core.showMessage("[data-auth-message]", socialErrorMessage(provider, error));

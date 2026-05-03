@@ -1,8 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>회원가입 | 택스쿡</title>
     <meta name="description" content="택스쿡 이메일 회원가입 페이지입니다.">
     <meta name="robots" content="noindex, follow">
@@ -12,10 +15,12 @@
     <link rel="stylesheet" href="styles-renewal-20260501-auth-live.css">
     <link rel="stylesheet" href="styles-renewal-20260501-auth-reset-v1.css">
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-auth-social-v1.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260501-auth-email-v1.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
+    <script defer src="site-renewal-20260503-auth-email-v5.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">본문으로 이동</a>
@@ -26,7 +31,6 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -60,6 +64,11 @@
         </form>
         <p class="auth-message" data-auth-message hidden></p>
         <p class="auth-helper">비밀번호는 6자리 이상 입력해주세요.</p>
+        <div class="social-login" aria-label="간편 인증 회원가입">
+          <button class="social-login-button kakao" type="button" data-social-login="kakao">카카오로 시작하기</button>
+          <button class="social-login-button naver" type="button" data-social-login="naver">네이버로 시작하기</button>
+          <button class="social-login-button google" type="button" data-social-login="google">구글로 시작하기</button>
+        </div>
         <p class="auth-alt">이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
       </section>
     </main>
@@ -78,8 +87,8 @@
           <a href="login.html">로그인</a>
           <a href="signup.html">회원가입</a>
           <a href="mypage.html">My 택스쿡</a>
-          <a href="https://tax-cook.com/doc1">이용약관</a>
-          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+          <a href="https://taxcook.co.kr/doc1">이용약관</a>
+          <a href="https://taxcook.co.kr/doc2">개인정보처리방침</a>
         </div>
       </div>
       <p class="copyright">© 2026 스마일택스. All rights reserved.</p>

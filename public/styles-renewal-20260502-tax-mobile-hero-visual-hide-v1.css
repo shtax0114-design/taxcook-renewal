@@ -1,0 +1,11 @@
+@media (max-width: 620px) {
+  .vatax-hero-visual,
+  .gitax-hero-visual {
+    display: none;
+  }
+
+  .vatax-hero .section-inner,
+  .gitax-hero .section-inner {
+    min-height: 0;
+  }
+}

@@ -1,0 +1,85 @@
+.vatax-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.vatax-hero .section-inner {
+  position: relative;
+  min-height: 430px;
+  z-index: 1;
+}
+
+.vatax-hero .section-eyebrow,
+.vatax-hero h1,
+.vatax-hero p:not(.section-eyebrow),
+.vatax-hero .deposit-notice,
+.vatax-hero .apply-shortcut {
+  position: relative;
+  z-index: 2;
+}
+
+.vatax-hero h1,
+.vatax-hero p:not(.section-eyebrow),
+.vatax-hero .deposit-notice {
+  max-width: 570px;
+}
+
+.vatax-hero-visual {
+  position: absolute;
+  top: -24px;
+  right: -150px;
+  width: min(62vw, 760px);
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(2px) saturate(0.98);
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+}
+
+.vatax-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  .vatax-hero-visual {
+    right: -210px;
+    width: min(76vw, 720px);
+    opacity: 0.24;
+  }
+}
+
+@media (max-width: 920px) {
+  .vatax-hero .section-inner {
+    min-height: 410px;
+  }
+
+  .vatax-hero-visual {
+    top: 32px;
+    right: -260px;
+    width: 760px;
+    opacity: 0.14;
+    filter: blur(5px) saturate(0.92);
+  }
+}
+
+@media (max-width: 620px) {
+  .vatax-hero .section-inner {
+    min-height: 390px;
+  }
+
+  .vatax-hero h1,
+  .vatax-hero p:not(.section-eyebrow),
+  .vatax-hero .deposit-notice {
+    max-width: 330px;
+  }
+
+  .vatax-hero-visual {
+    top: 74px;
+    right: -285px;
+    width: 690px;
+    opacity: 0.12;
+    filter: blur(5px) saturate(0.9);
+  }
+}

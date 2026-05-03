@@ -1,0 +1,85 @@
+.gitax-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.gitax-hero .section-inner {
+  position: relative;
+  min-height: 430px;
+  z-index: 1;
+}
+
+.gitax-hero .section-eyebrow,
+.gitax-hero h1,
+.gitax-hero p:not(.section-eyebrow),
+.gitax-hero .deposit-notice,
+.gitax-hero .apply-shortcut {
+  position: relative;
+  z-index: 2;
+}
+
+.gitax-hero h1,
+.gitax-hero p:not(.section-eyebrow),
+.gitax-hero .deposit-notice {
+  max-width: 570px;
+}
+
+.gitax-hero-visual {
+  position: absolute;
+  top: -28px;
+  right: -55px;
+  width: min(58vw, 720px);
+  pointer-events: none;
+  opacity: 0.28;
+  filter: blur(2px) saturate(0.98);
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+}
+
+.gitax-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  .gitax-hero-visual {
+    right: -140px;
+    width: min(70vw, 690px);
+    opacity: 0.24;
+  }
+}
+
+@media (max-width: 920px) {
+  .gitax-hero .section-inner {
+    min-height: 410px;
+  }
+
+  .gitax-hero-visual {
+    top: 34px;
+    right: -270px;
+    width: 740px;
+    opacity: 0.14;
+    filter: blur(5px) saturate(0.92);
+  }
+}
+
+@media (max-width: 620px) {
+  .gitax-hero .section-inner {
+    min-height: 390px;
+  }
+
+  .gitax-hero h1,
+  .gitax-hero p:not(.section-eyebrow),
+  .gitax-hero .deposit-notice {
+    max-width: 330px;
+  }
+
+  .gitax-hero-visual {
+    top: 76px;
+    right: -295px;
+    width: 680px;
+    opacity: 0.12;
+    filter: blur(5px) saturate(0.9);
+  }
+}

@@ -1,17 +1,20 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>부가세 신고 | 택스쿡</title>
     <meta name="description" content="택스쿡 부가세 신고 페이지입니다. 신고 대상 확인부터 제출 안내까지 필요한 절차를 차근차근 안내합니다.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tax-cook.com/vatax">
+    <link rel="canonical" href="https://taxcook.co.kr/vatax">
     <meta property="og:type" content="website">
     <meta property="og:title" content="부가세 신고 | 택스쿡">
     <meta property="og:description" content="부가세 신고 대상 확인부터 제출 안내까지 필요한 절차를 택스쿡에서 시작하세요.">
-    <meta property="og:url" content="https://tax-cook.com/vatax">
-    <meta property="og:image" content="https://tax-cook.com/image/logo-taxcook-20260430-kong-crop.png">
+    <meta property="og:url" content="https://taxcook.co.kr/vatax">
+    <meta property="og:image" content="https://taxcook.co.kr/image/logo-taxcook-20260430-kong-crop.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
@@ -23,10 +26,19 @@
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
     <link rel="stylesheet" href="styles-renewal-20260501-social-mobile-hide.css">
     <link rel="stylesheet" href="styles-renewal-20260501-mobile-bottom-light.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-vatax-hero-visual-v3.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-apply-payment-notice-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-hero-gap-after-notice-v3.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-mobile-hero-visual-hide-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-desktop-shortcut-gap-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-apply-form-anchor-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-vatax-fee-options-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-tax-mobile-apply-cta-v1.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260502-supabase-forms-discount-v4.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
+    <script defer src="site-renewal-20260503-supabase-forms-discount-v7.js"></script>
     <script defer src="site-renewal-20260501-tax-page-soft-reveal.js"></script>
   </head>
   <body>
@@ -41,7 +53,6 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -53,26 +64,25 @@
     </header>
 
     <main id="main" class="subpage">
-      <section class="sub-hero">
+      <section class="sub-hero vatax-hero">
         <div class="section-inner">
           <p class="section-eyebrow">VAT TAX</p>
           <h1>부가가치세 신고</h1>
-          <p>신고 유형과 추가 옵션을 확인하고, 필요한 부가세 신고를 택스쿡에서 시작하세요.</p>
-          <div class="deposit-notice">
-            <strong>신청 시 신고유형에 대한 결제가 진행됩니다.</strong>
-            <p>추가옵션은 자료 검토 후 해당사항이 있을 때 추가 결제됩니다.</p>
-          </div>
+          <p>신고 유형과 추가 옵션을 확인하고,<br>필요한 부가세 신고를 택스쿡에서 시작하세요.</p>
           <a class="apply-shortcut" href="#apply">신청 바로가기</a>
+          <div class="vatax-hero-visual" aria-hidden="true">
+            <img src="image/hero-vatax-transparent-20260502.png" alt="">
+          </div>
         </div>
       </section>
 
       <section class="fee-section">
         <div class="section-inner">
-          <div class="fee-grid">
+          <div class="fee-grid fee-grid-vatax-primary">
             <article class="fee-card">
               <span>신고 유형 1</span>
               <h2>간이과세자</h2>
-              <p>연간 매출액이 8,000만원 미만인 소규모 사업자</p>
+              <p>연 매출액 10,400만원 미만인 소규모 사업자</p>
               <strong>8<small>만원~</small></strong>
               <em>기본수수료</em>
             </article>
@@ -83,14 +93,17 @@
               <strong>10<small>만원~</small></strong>
               <em>기본수수료</em>
             </article>
-            <article class="fee-card">
+          </div>
+
+          <div class="fee-grid fee-grid-vatax-options">
+            <article class="fee-card option">
               <span>추가 옵션 1</span>
               <h2>추가옵션</h2>
               <p>홈택스 미등록 신용카드 추가 매입세액공제</p>
               <strong>2<small>만원</small></strong>
               <em>추가수수료</em>
             </article>
-            <article class="fee-card">
+            <article class="fee-card option">
               <span>추가 옵션 2</span>
               <h2>기한후 신고</h2>
               <p>7월 25일 또는 익년 1월 25일 이후 신고분</p>
@@ -135,6 +148,10 @@
 
       <section class="apply-section" id="apply">
         <div class="section-inner">
+          <div id="apply-form" class="apply-payment-notice">
+            <strong>신청 시 신고유형에 대한 결제가 진행됩니다.</strong>
+            <p>추가옵션은 자료 검토 후 해당사항이 있을 때 추가 결제됩니다.</p>
+          </div>
           <div class="apply-box">
             <p class="section-eyebrow">Apply</p>
             <h2>부가가치세 신고 <span class="apply-title-break">신청 및 결제</span></h2>
@@ -261,17 +278,15 @@
           <a href="mypage.html">My 택스쿡</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="https://tax-cook.com/office">창업 컨설팅·기장 상담</a>
-          <a href="https://tax-cook.com/doc1">이용약관</a>
-          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+          <a href="https://taxcook.co.kr/doc1">이용약관</a>
+          <a href="https://taxcook.co.kr/doc2">개인정보처리방침</a>
         </div>
       </div>
       <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
     </footer>
 
-    <div class="mobile-sticky-cta" aria-label="모바일 빠른 이동">
-      <a href="/">홈으로</a>
-      <a href="mypage.html">My 택스쿡</a>
+    <div class="mobile-sticky-cta tax-apply-sticky-cta" aria-label="모바일 신청 이동">
+      <a href="#apply-form">바로 신고하기</a>
     </div>
   </body>
 </html>

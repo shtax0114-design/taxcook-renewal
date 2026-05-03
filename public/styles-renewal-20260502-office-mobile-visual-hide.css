@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+  .office-visual {
+    display: none;
+  }
+
+  .office-hero-inner {
+    display: block;
+  }
+}

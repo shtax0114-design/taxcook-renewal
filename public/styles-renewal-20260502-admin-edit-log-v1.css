@@ -1,0 +1,146 @@
+.developer-log-section {
+  border-color: #c9d8f0;
+  background: #f8fbff;
+}
+
+.developer-log-list {
+  display: grid;
+  gap: 12px;
+}
+
+.developer-log-empty,
+.developer-log-error {
+  padding: 18px;
+  border: 1px dashed #c9d8f0;
+  border-radius: 8px;
+  color: #52647f;
+  background: #fff;
+  font-size: 14px;
+}
+
+.developer-log-error {
+  border-color: #f4b5a7;
+  color: #a7391f;
+  background: #fff7f4;
+}
+
+.developer-log-item {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #d8e4f4;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.developer-log-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.developer-log-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: #061f55;
+  font-weight: 800;
+}
+
+.developer-log-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #fff1e7;
+  color: #d65d1a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.developer-log-meta {
+  color: #6b7890;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.developer-log-changes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.developer-log-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #eef5ff;
+  color: #244f8f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.developer-log-change-table {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid #e2eaf6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.developer-log-change-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.9fr) minmax(160px, 1fr) 24px minmax(160px, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid #eef3fb;
+  color: #283953;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.developer-log-change-row:first-child {
+  border-top: 0;
+}
+
+.developer-log-change-row strong {
+  color: #061f55;
+}
+
+.developer-log-change-row span {
+  overflow-wrap: anywhere;
+}
+
+.developer-log-change-row em {
+  color: #d65d1a;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .developer-log-head {
+    display: grid;
+    gap: 6px;
+  }
+
+  .developer-log-meta {
+    text-align: left;
+  }
+
+  .developer-log-change-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .developer-log-change-row em {
+    text-align: left;
+  }
+}

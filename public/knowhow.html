@@ -1,18 +1,21 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>택스쿡 소개 | 쉽고 빠른 세무 신고</title>
     <meta name="description" content="택스쿡 BI와 서비스 철학, 대표 세무사의 전문성을 소개합니다. 복잡한 세무 신고를 쉽고 빠르게 시작하세요.">
     <meta name="keywords" content="택스쿡 소개, 택스쿡 BI, 부가가치세 신고, 종합소득세 신고, 세무 신고 서비스, 스마일택스">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tax-cook.com/knowhow">
+    <link rel="canonical" href="https://taxcook.co.kr/knowhow">
     <meta property="og:type" content="website">
     <meta property="og:title" content="택스쿡 소개 | 쉽고 빠른 세무 신고">
     <meta property="og:description" content="택스쿡은 복잡하고 어려운 세무 신고를 쉽고 빠르고 간단하게 안내합니다.">
-    <meta property="og:url" content="https://tax-cook.com/knowhow">
-    <meta property="og:image" content="https://tax-cook.com/image/logo-taxcook-20260430-kong-crop.png">
+    <meta property="og:url" content="https://taxcook.co.kr/knowhow">
+    <meta property="og:image" content="https://taxcook.co.kr/image/logo-taxcook-20260430-kong-crop.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
@@ -20,7 +23,11 @@
     <link rel="stylesheet" href="styles-renewal-20260501-knowhow-nav-text.css">
   <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
   <link rel="stylesheet" href="styles-renewal-20260501-social-mobile-hide.css">
-  <link rel="stylesheet" href="styles-renewal-20260501-mobile-bottom-light.css">
+    <link rel="stylesheet" href="styles-renewal-20260501-mobile-bottom-light.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="site-renewal-20260501-supabase-config.js"></script>
+    <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
     <script defer src="site-renewal-20260501-quickmenu.js"></script>
   </head>
   <body>
@@ -35,7 +42,6 @@
           <a href="knowhow.html" aria-current="page">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -145,17 +151,16 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="https://tax-cook.com/office">창업 컨설팅·기장 상담</a>
-          <a href="https://tax-cook.com/doc1">이용약관</a>
-          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+          <a href="https://taxcook.co.kr/doc1">이용약관</a>
+          <a href="https://taxcook.co.kr/doc2">개인정보처리방침</a>
         </div>
       </div>
       <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
     </footer>
 
     <div class="mobile-sticky-cta" aria-label="모바일 빠른 이동">
-      <a href="/">홈으로</a>
-      <a href="mypage.html">My 택스쿡</a>
+      <a href="vatax.html">부가세</a>
+      <a href="gitax.html">종합소득세</a>
     </div>
   </body>
 </html>

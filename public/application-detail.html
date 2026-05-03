@@ -1,8 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>신청 상세 | 택스쿡</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles-renewal-20260501-payment-info.css">
@@ -13,10 +16,13 @@
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v4.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-compact-v5.css">
     <link rel="stylesheet" href="styles-renewal-20260502-admin-detail-grid-coords.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-admin-edit-log-v2.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-fixed-workspace-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-admin-detail-width-v4.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260502-admin-detail-discount-v3.js"></script>
+    <script defer src="site-renewal-20260503-admin-detail-logs-v3.js"></script>
   </head>
   <body class="ops-admin-page legacy-detail-page">
     <main class="ops-main legacy-detail-main">
@@ -103,7 +109,7 @@
           <label class="legacy-field gitax-cell gitax-pos-manager"><span>신고담당자</span><select name="manager" data-manager-select><option value="">신고담당자명</option></select></label>
           <label class="legacy-field gitax-cell gitax-pos-status"><span>처리상태</span><select name="processStatus" data-fixed-options data-default-option="신청 접수 및 계약금 결제"><option>신청 접수 및 계약금 결제</option><option>신고유형 검토 및 결제</option><option>신고서 작성</option><option>추가결제 및 최종완료</option><option>신고 접수 완료</option></select></label>
 
-          <label class="legacy-field gitax-cell gitax-pos-report-type"><span>신고유형</span><select name="reportType" data-fixed-options><option>복식부기</option><option>간편장부A</option><option>간편장부B</option><option>단순경비율</option><option>기준경비율</option></select></label>
+          <label class="legacy-field gitax-cell gitax-pos-report-type"><span>신고유형</span><select name="reportType" data-fixed-options><option>[단순] 추계신고</option><option>[기준] 추계신고</option><option>간편장부A</option><option>간편장부B</option><option>간편장부C</option><option>복식장부</option></select></label>
           <label class="legacy-field gitax-cell gitax-pos-base-fee"><span>기본수수료</span><input type="number" name="baseFee" min="0" placeholder="금액"></label>
           <label class="legacy-field gitax-cell gitax-pos-extra-1"><span class="sr-only">추가결제 항목</span><select name="extraPaymentType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
           <label class="legacy-field gitax-cell gitax-pos-extra-2"><span class="sr-only">추가결제 항목</span><select name="businessExtraType" data-fixed-options><option value="">추가결제선택</option><option>소득추가</option><option>사업추가</option><option>기타</option><option>기한 후 신고</option></select></label>
@@ -154,6 +160,16 @@
           <div class="legacy-info-cell receipt-cell"><strong>매출전표</strong><button class="legacy-button" type="button" data-receipt-open>보기</button></div>
           <div class="legacy-info-cell"><strong>결제상태</strong><span class="legacy-status-pill" data-detail-text="paymentStatus">-</span></div>
           <div class="legacy-info-cell wide"><strong>주문상품</strong><span data-detail-text="orderName">-</span></div>
+        </div>
+      </section>
+      <section class="legacy-section developer-log-section" data-edit-log-section hidden>
+        <div class="legacy-section-title action-title">
+          <span>문서 수정 로그</span>
+          <button class="legacy-button" type="button" data-edit-log-toggle aria-expanded="false">문서 수정 로그 보기</button>
+          <button class="legacy-button subtle" type="button" data-edit-log-refresh hidden>새로고침</button>
+        </div>
+        <div class="developer-log-list" data-edit-log-list hidden>
+          <div class="developer-log-empty">수정 로그를 불러오는 중입니다.</div>
         </div>
       </section>
     </main>

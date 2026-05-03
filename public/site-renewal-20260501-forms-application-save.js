@@ -1,4 +1,4 @@
-const menuButton = document.querySelector("[data-menu-button]");
+﻿const menuButton = document.querySelector("[data-menu-button]");
 const nav = document.querySelector("[data-nav]");
 
 if (menuButton && nav) {
@@ -47,7 +47,7 @@ if (contactForm) {
     event.preventDefault();
     const formData = new FormData(contactForm);
     const target = formData.get("service");
-    if (typeof target === "string" && target.startsWith("https://tax-cook.com/")) {
+    if (typeof target === "string" && target.startsWith("https://taxcook.co.kr/")) {
       window.location.href = target;
     }
   });

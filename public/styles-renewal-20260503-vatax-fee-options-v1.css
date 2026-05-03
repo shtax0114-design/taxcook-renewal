@@ -1,0 +1,24 @@
+.fee-grid-vatax-primary,
+.fee-grid-vatax-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fee-grid-vatax-options {
+  margin-top: 18px;
+}
+
+.fee-grid-vatax-options .fee-card.option > span {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.fee-grid-vatax-options .fee-card.option h2 {
+  color: #be123c;
+}
+
+@media (max-width: 620px) {
+  .fee-grid-vatax-primary,
+  .fee-grid-vatax-options {
+    grid-template-columns: 1fr;
+  }
+}

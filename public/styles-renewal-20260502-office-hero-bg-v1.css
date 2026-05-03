@@ -1,0 +1,49 @@
+.office-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #eef6ff;
+}
+
+.office-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("image/office-hero-bg-20260502.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.24;
+  filter: blur(1.5px) saturate(0.95);
+  transform: scale(1.035);
+  z-index: -2;
+}
+
+.office-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(248, 251, 255, 0.94) 0%, rgba(248, 251, 255, 0.84) 46%, rgba(238, 246, 255, 0.74) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(237, 245, 255, 0.78) 100%);
+  z-index: -1;
+}
+
+.office-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .office-hero::before {
+    background-position: 42% center;
+    opacity: 0.2;
+    filter: blur(2px) saturate(0.9);
+    transform: scale(1.06);
+  }
+
+  .office-hero::after {
+    background:
+      linear-gradient(180deg, rgba(248, 251, 255, 0.9) 0%, rgba(239, 247, 255, 0.86) 100%),
+      linear-gradient(90deg, rgba(248, 251, 255, 0.92) 0%, rgba(248, 251, 255, 0.72) 100%);
+  }
+}

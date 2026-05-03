@@ -1,0 +1,14 @@
+{
+  "name": "택스쿡",
+  "short_name": "택스쿡",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#123762",
+  "background_color": "#123762",
+  "display": "standalone"
+}

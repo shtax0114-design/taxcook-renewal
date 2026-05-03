@@ -1,8 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>My 택스쿡 | 택스쿡</title>
     <meta name="description" content="택스쿡 신청 내역과 진행 상태를 확인하세요.">
     <meta name="robots" content="noindex, follow">
@@ -12,10 +15,12 @@
     <link rel="stylesheet" href="styles-renewal-20260501-mypage-mobilecards.css">
     <link rel="stylesheet" href="styles-renewal-20260501-auth-reset-v1.css">
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-mypage-password-button-v1.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260501-mypage-profile-v3.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
+    <script defer src="site-renewal-20260503-mypage-profile-v4.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -25,7 +30,6 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -41,7 +45,6 @@
           <div class="mypage-title">
             <h1><span data-my-name>택스쿡 고객</span>님의 신청 내역</h1>
           </div>
-          <button class="mypage-logout" type="button" data-logout>로그아웃</button>
         </div>
 
         <dl class="mypage-profile" aria-label="고객 정보">
@@ -75,7 +78,10 @@
               <input type="text" name="bizNumber" maxlength="10" inputmode="numeric">
             </label>
             <p class="profile-message" data-profile-message hidden></p>
-            <button class="profile-save" type="submit">저장</button>
+            <div class="profile-actions">
+              <button class="profile-save" type="submit">저장</button>
+              <a class="profile-password-link" href="password.html">비밀번호 변경</a>
+            </div>
           </form>
         </section>
 

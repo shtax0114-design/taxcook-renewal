@@ -1,0 +1,96 @@
+.ops-admin-page {
+  --admin-workspace-width: 1440px;
+}
+
+.ops-admin-page .ops-title-bar,
+.ops-admin-page .admin-legacy-menu,
+.ops-admin-page .admin-accent-bar,
+.ops-admin-page .ops-toolbar,
+.ops-admin-page [data-admin-panel],
+.ops-admin-page .ops-table-wrap {
+  width: var(--admin-workspace-width);
+  min-width: var(--admin-workspace-width);
+  max-width: var(--admin-workspace-width);
+}
+
+.ops-admin-page .admin-real-table {
+  width: var(--admin-workspace-width) !important;
+  min-width: var(--admin-workspace-width) !important;
+  max-width: var(--admin-workspace-width) !important;
+  table-layout: fixed;
+}
+
+.ops-admin-page .admin-real-table th,
+.ops-admin-page .admin-real-table td {
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(1),
+.ops-admin-page .admin-real-table td:nth-child(1) {
+  width: 21%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(2),
+.ops-admin-page .admin-real-table td:nth-child(2) {
+  width: 9%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(3),
+.ops-admin-page .admin-real-table td:nth-child(3),
+.ops-admin-page .admin-real-table th:nth-child(4),
+.ops-admin-page .admin-real-table td:nth-child(4),
+.ops-admin-page .admin-real-table th:nth-child(6),
+.ops-admin-page .admin-real-table td:nth-child(6),
+.ops-admin-page .admin-real-table th:nth-child(9),
+.ops-admin-page .admin-real-table td:nth-child(9) {
+  width: 7%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(5),
+.ops-admin-page .admin-real-table td:nth-child(5),
+.ops-admin-page .admin-real-table th:nth-child(8),
+.ops-admin-page .admin-real-table td:nth-child(8) {
+  width: 8%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(7),
+.ops-admin-page .admin-real-table td:nth-child(7) {
+  width: 5%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(10),
+.ops-admin-page .admin-real-table td:nth-child(10) {
+  width: 9%;
+}
+
+.ops-admin-page .admin-real-table th:nth-child(11),
+.ops-admin-page .admin-real-table td:nth-child(11),
+.ops-admin-page .admin-real-table th:nth-child(12),
+.ops-admin-page .admin-real-table td:nth-child(12) {
+  width: 6%;
+}
+
+.ops-admin-page .admin-detail-dropdown-row > td {
+  width: auto !important;
+  min-width: var(--admin-workspace-width) !important;
+  max-width: none !important;
+  padding-right: 0;
+  overflow: visible;
+}
+
+.ops-admin-page .admin-detail-dropdown {
+  width: var(--admin-workspace-width);
+  min-width: var(--admin-workspace-width);
+  max-width: var(--admin-workspace-width);
+}
+
+.ops-admin-page .admin-detail-frame {
+  display: block;
+  width: var(--admin-workspace-width);
+  min-width: var(--admin-workspace-width);
+  max-width: var(--admin-workspace-width);
+  height: 520px;
+  min-height: 320px;
+  overflow: hidden;
+}

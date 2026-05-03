@@ -1,0 +1,18 @@
+@media (max-width: 920px) {
+  .mobile-sticky-cta.tax-apply-sticky-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-sticky-cta.tax-apply-sticky-cta a,
+  .mobile-sticky-cta.tax-apply-sticky-cta a:first-child,
+  .mobile-sticky-cta.tax-apply-sticky-cta a:last-child {
+    min-height: 56px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #071d51 0%, #0b2560 100%);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(11, 37, 96, 0.18);
+    font-size: 16px;
+    font-weight: 900;
+  }
+}

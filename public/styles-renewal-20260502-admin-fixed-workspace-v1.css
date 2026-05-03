@@ -1,0 +1,65 @@
+html {
+  min-width: 1440px;
+  overflow-x: auto;
+}
+
+body.ops-admin-page {
+  min-width: 1440px;
+  overflow-x: auto;
+}
+
+.ops-admin-page .ops-main {
+  width: 1440px;
+  min-width: 1440px;
+  max-width: none;
+  margin: 0;
+}
+
+.ops-admin-page .ops-title-bar,
+.ops-admin-page .admin-legacy-menu,
+.ops-admin-page .admin-accent-bar,
+.ops-admin-page .ops-toolbar,
+.ops-admin-page [data-admin-panel],
+.ops-admin-page .column-filter-panel {
+  width: 1440px;
+  min-width: 1440px;
+  max-width: none;
+}
+
+.ops-admin-page .ops-table-wrap {
+  width: 1440px;
+  max-width: none;
+  overflow-x: visible;
+}
+
+.ops-admin-page .ops-table,
+.ops-admin-page .admin-real-table,
+.ops-admin-page .member-admin-table,
+.ops-admin-page .popup-admin-table,
+.ops-admin-page .discount-admin-table {
+  min-width: 1440px;
+}
+
+.ops-admin-page.legacy-detail-page,
+.ops-admin-page.legacy-detail-page .ops-main,
+.ops-admin-page.legacy-detail-page .legacy-section {
+  min-width: 1280px;
+}
+
+.ops-admin-page.legacy-detail-page .ops-main {
+  width: 1280px;
+}
+
+.member-edit-modal {
+  min-width: 0;
+}
+
+@media (max-width: 1439px) {
+  body.ops-admin-page {
+    width: 1440px;
+  }
+
+  .ops-admin-page.legacy-detail-page {
+    width: 1280px;
+  }
+}

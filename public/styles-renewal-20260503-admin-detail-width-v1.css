@@ -1,0 +1,16 @@
+.ops-admin-page.legacy-detail-page,
+.ops-admin-page.legacy-detail-page .ops-main,
+.ops-admin-page.legacy-detail-page .legacy-section {
+  width: 1440px;
+  min-width: 1440px;
+  max-width: none;
+}
+
+.ops-admin-page.legacy-detail-page {
+  overflow-x: hidden;
+}
+
+.ops-admin-page.legacy-detail-page .legacy-section,
+.ops-admin-page.legacy-detail-page .service-detail-form {
+  margin-right: 0;
+}

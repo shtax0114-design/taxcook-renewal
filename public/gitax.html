@@ -1,17 +1,20 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>종합소득세 신고 | 택스쿡</title>
     <meta name="description" content="택스쿡 종합소득세 신고 페이지입니다. 신고 유형별 수수료와 계약금 안내를 확인하고 신청을 시작하세요.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tax-cook.com/gitax">
+    <link rel="canonical" href="https://taxcook.co.kr/gitax">
     <meta property="og:type" content="website">
     <meta property="og:title" content="종합소득세 신고 | 택스쿡">
     <meta property="og:description" content="종합소득세 신고 유형별 수수료와 계약금 안내를 확인하세요.">
-    <meta property="og:url" content="https://tax-cook.com/gitax">
-    <meta property="og:image" content="https://tax-cook.com/image/logo-taxcook-20260430-kong-crop.png">
+    <meta property="og:url" content="https://taxcook.co.kr/gitax">
+    <meta property="og:image" content="https://taxcook.co.kr/image/logo-taxcook-20260430-kong-crop.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
@@ -23,10 +26,19 @@
     <link rel="stylesheet" href="styles-renewal-20260501-nav-mobile-fix.css">
     <link rel="stylesheet" href="styles-renewal-20260501-social-mobile-hide.css">
     <link rel="stylesheet" href="styles-renewal-20260501-mobile-bottom-light.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-gitax-hero-visual-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-apply-payment-notice-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-hero-gap-after-notice-v3.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-mobile-hero-visual-hide-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-tax-desktop-shortcut-gap-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-apply-form-anchor-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-tax-mobile-apply-cta-v1.css">
+    <link rel="stylesheet" href="styles-renewal-20260503-gitax-fee-six-v1.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
     <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
-    <script defer src="site-renewal-20260502-supabase-forms-discount-v4.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
+    <script defer src="site-renewal-20260503-supabase-forms-discount-v7.js"></script>
     <script defer src="site-renewal-20260501-tax-page-soft-reveal.js"></script>
   </head>
   <body>
@@ -41,7 +53,6 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -53,55 +64,61 @@
     </header>
 
     <main id="main" class="subpage">
-      <section class="sub-hero">
+      <section class="sub-hero gitax-hero">
         <div class="section-inner">
           <p class="section-eyebrow">GI TAX</p>
           <h1>종합소득세 신고</h1>
-          <p>신고 유형과 추가 옵션을 확인하고, 필요한 종합소득세 신고를 택스쿡에서 시작하세요.</p>
-          <div class="deposit-notice">
-            <strong>신청 시 계약금 5만원이 결제됩니다.</strong>
-            <p>계약금을 제외한 나머지 금액은 자료 검토 후 차후에 결제됩니다.</p>
-          </div>
+          <p>신고 유형과 추가 옵션을 확인하고,<br>필요한 종합소득세 신고를 택스쿡에서 시작하세요.</p>
           <a class="apply-shortcut" href="#apply">신청 바로가기</a>
+          <div class="gitax-hero-visual" aria-hidden="true">
+            <img src="image/hero-gitax-transparent-20260502.png" alt="">
+          </div>
         </div>
       </section>
 
       <section class="fee-section">
         <div class="section-inner">
-          <div class="fee-grid fee-grid-five">
+          <div class="fee-grid fee-grid-six">
             <article class="fee-card">
               <span>신고 유형 1</span>
-              <h2>복식장부</h2>
-              <p>재무제표를 작성하여 신고하는 방법</p>
-              <strong>50<small>만원</small></strong>
+              <h2>[단순] 추계신고</h2>
+              <p>세법상 단순경비율로 신고하는 방법</p>
+              <strong>5<small>만원</small></strong>
               <em>기본수수료</em>
             </article>
             <article class="fee-card">
               <span>신고 유형 2</span>
-              <h2>간편장부A</h2>
-              <p>간단한 장부를 작성하여 신고하는 방법<br>3,000만원 이상</p>
-              <strong>30<small>만원</small></strong>
-              <em>기본수수료</em>
-            </article>
-            <article class="fee-card">
-              <span>신고 유형 3</span>
-              <h2>간편장부B</h2>
-              <p>간단한 장부를 작성하여 신고하는 방법<br>3,000만원 미만</p>
-              <strong>20<small>만원</small></strong>
-              <em>기본수수료</em>
-            </article>
-            <article class="fee-card">
-              <span>신고 유형 4</span>
-              <h2>[기준]추계신고</h2>
+              <h2>[기준] 추계신고</h2>
               <p>세법상 기준경비율로 신고하는 방법</p>
               <strong>10<small>만원</small></strong>
               <em>기본수수료</em>
             </article>
             <article class="fee-card">
+              <span>신고 유형 3</span>
+              <h2>간편장부A</h2>
+              <p>간단한 장부를 작성하여 신고하는 방법<br>3,000만원 이하</p>
+              <strong>10<small>만원</small></strong>
+              <em>기본수수료</em>
+            </article>
+            <article class="fee-card">
+              <span>신고 유형 4</span>
+              <h2>간편장부B</h2>
+              <p>간단한 장부를 작성하여 신고하는 방법<br>3,000만원 초과 ~ 5,000만원 이하</p>
+              <strong>20<small>만원</small></strong>
+              <em>기본수수료</em>
+            </article>
+            <article class="fee-card">
               <span>신고 유형 5</span>
-              <h2>[단순]추계신고</h2>
-              <p>세법상 단순경비율로 신고하는 방법</p>
-              <strong>5<small>만원</small></strong>
+              <h2>간편장부C</h2>
+              <p>간단한 장부를 작성하여 신고하는 방법<br>5,000만원 이상</p>
+              <strong>30<small>만원</small></strong>
+              <em>기본수수료</em>
+            </article>
+            <article class="fee-card">
+              <span>신고 유형 6</span>
+              <h2>복식장부</h2>
+              <p>재무제표를 작성하여 신고하는 방법</p>
+              <strong>40<small>만원</small></strong>
               <em>기본수수료</em>
             </article>
           </div>
@@ -124,9 +141,9 @@
             <article class="fee-card option">
               <span>추가 옵션 3</span>
               <h2>세액공제감면</h2>
-              <p>세액 공제 감면 적용 시 감면금액 기준으로 계산</p>
-              <strong>10<small>%~</small>20<small>%</small></strong>
-              <em>감면금액 기준</em>
+              <p>세액 공제 및 감면 적용 시 절세액 기준으로 계산</p>
+              <strong>5<small>%~</small>20<small>%</small></strong>
+              <em>절세액 기준</em>
             </article>
             <article class="fee-card option">
               <span>추가 옵션 4</span>
@@ -179,6 +196,10 @@
 
       <section class="apply-section" id="apply">
         <div class="section-inner">
+          <div id="apply-form" class="apply-payment-notice">
+            <strong>신청 시 계약금 5만원이 결제됩니다.</strong>
+            <p>계약금을 제외한 나머지 금액은 자료 검토 후 차후에 결제됩니다.</p>
+          </div>
           <div class="apply-box">
             <p class="section-eyebrow">Apply</p>
             <h2>종합소득세 신고 <span class="apply-title-break">신청 및 계약금 결제</span></h2>
@@ -294,17 +315,15 @@
           <a href="mypage.html">My 택스쿡</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="https://tax-cook.com/office">창업 컨설팅·기장 상담</a>
-          <a href="https://tax-cook.com/doc1">이용약관</a>
-          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+          <a href="https://taxcook.co.kr/doc1">이용약관</a>
+          <a href="https://taxcook.co.kr/doc2">개인정보처리방침</a>
         </div>
       </div>
       <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
     </footer>
 
-    <div class="mobile-sticky-cta" aria-label="모바일 빠른 이동">
-      <a href="/">홈으로</a>
-      <a href="mypage.html">My 택스쿡</a>
+    <div class="mobile-sticky-cta tax-apply-sticky-cta" aria-label="모바일 신청 이동">
+      <a href="#apply-form">바로 신고하기</a>
     </div>
   </body>
 </html>

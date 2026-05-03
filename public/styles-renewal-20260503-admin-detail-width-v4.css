@@ -1,0 +1,64 @@
+:root {
+  --admin-detail-width: 1440px;
+}
+
+html,
+.ops-admin-page.legacy-detail-page {
+  width: var(--admin-detail-width);
+  min-width: var(--admin-detail-width);
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.ops-admin-page.legacy-detail-page .ops-main,
+.ops-admin-page.legacy-detail-page .legacy-detail-main {
+  width: var(--admin-detail-width);
+  min-width: var(--admin-detail-width);
+  min-height: 0 !important;
+  max-width: none;
+  box-sizing: border-box;
+  padding-bottom: 0 !important;
+  margin-bottom: 0;
+}
+
+.ops-admin-page.legacy-detail-page .legacy-section,
+.ops-admin-page.legacy-detail-page .service-detail-form,
+.ops-admin-page.legacy-detail-page .legacy-section-title,
+.ops-admin-page.legacy-detail-page .legacy-applicant-strip,
+.ops-admin-page.legacy-detail-page .legacy-process-panel,
+.ops-admin-page.legacy-detail-page .gitax-process-panel,
+.ops-admin-page.legacy-detail-page .legacy-prepay-strip,
+.ops-admin-page.legacy-detail-page .developer-log-section {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin-right: 0;
+}
+
+.ops-admin-page.legacy-detail-page .legacy-section-title {
+  min-height: 32px;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.ops-admin-page.legacy-detail-page .action-title {
+  gap: 12px;
+}
+
+.ops-admin-page.legacy-detail-page .legacy-button {
+  min-width: 46px;
+  min-height: 24px;
+  border-radius: 3px;
+  padding: 0 9px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.ops-admin-page.legacy-detail-page .legacy-button.subtle {
+  min-width: 44px;
+  min-height: 24px;
+}

@@ -1,22 +1,33 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>택스쿡 | 세금 신고, 쉽고 정확하게</title>
-    <meta name="description" content="택스쿡은 부가가치세, 종합소득세, 사업자 등록과 기장 상담을 온라인으로 시작할 수 있도록 안내하는 세무 신고 서비스입니다.">
+    <meta name="description" content="세금신고, 이제 쉽고 정확하게. 부가세와 종합소득세 신고를 택스쿡에서 간편하게 시작하세요.">
     <meta name="keywords" content="택스쿡, 스마일택스, 부가가치세 신고, 종합소득세 신고, 사업자등록, 세무기장, 세무 상담">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://tax-cook.com/">
+    <link rel="canonical" href="https://taxcook.co.kr/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="택스쿡 | 세금 신고, 쉽고 정확하게">
-    <meta property="og:description" content="필요한 신고를 선택하고, 안내에 따라 세무 신고 절차를 시작하세요.">
-    <meta property="og:url" content="https://tax-cook.com/">
-    <meta property="og:image" content="https://tax-cook.com/image/logo-taxcook-20260430-kong-crop.png">
+    <meta property="og:site_name" content="택스쿡">
+    <meta property="og:title" content="택스쿡 | 세금신고, 이제 쉽고 정확하게">
+    <meta property="og:description" content="부가세와 종합소득세 신고를 택스쿡에서 간편하게 시작하세요.">
+    <meta property="og:url" content="https://taxcook.co.kr/">
+    <meta property="og:image" content="https://taxcook.co.kr/image/taxcook-kakao-og-20260503.png">
+    <meta property="og:image:secure_url" content="https://taxcook.co.kr/image/taxcook-kakao-og-20260503.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="택스쿡 로고">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="택스쿡 | 세금신고, 이제 쉽고 정확하게">
+    <meta name="twitter:description" content="부가세와 종합소득세 신고를 택스쿡에서 간편하게 시작하세요.">
+    <meta name="twitter:image" content="https://taxcook.co.kr/image/taxcook-kakao-og-20260503.png">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="styles-renewal-20260501-service-button-cursor.css">
+  <link rel="stylesheet" href="styles-renewal-20260502-hero-visual-v9.css">
   <link rel="stylesheet" href="styles-renewal-20260501-service-gitax-icon-desktop.css">
   <link rel="stylesheet" href="styles-renewal-20260501-hero-button-grow.css">
   <link rel="stylesheet" href="styles-renewal-20260501-hero-button-motion-visible.css">
@@ -34,6 +45,8 @@
     <link rel="stylesheet" href="styles-renewal-20260502-home-popup.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="site-renewal-20260501-supabase-config.js"></script>
+    <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
+    <script defer src="site-renewal-20260503-nav-auth-state-v2.js"></script>
     <script defer src="site-renewal-20260501-quickmenu.js"></script>
     <script defer src="site-renewal-20260501-hero-button-motion-visible.js"></script>
     <script defer src="site-renewal-20260501-hero-button-press.js"></script>
@@ -52,7 +65,6 @@
           <a href="knowhow.html">택스쿡 소개</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="office.html">스마일워크</a>
         </nav>
         <div class="header-actions">
           <a class="login-link" href="login.html">로그인</a>
@@ -68,18 +80,20 @@
         <div class="hero-inner">
           <div class="hero-text">
             <p class="hero-eyebrow">세무 신고가 막막할 때, 택스쿡에서 시작하세요</p>
-            <h1 id="hero-title">세금 신고,<br>이제 <em class="typing-text" data-text="쉽고 정확하게">쉽고 정확하게</em><br>마무리하세요</h1>
+            <h1 id="hero-title">세금신고,<br>이제 쉽고 정확하게<br><em class="typing-text" data-text="택스쿡">택스쿡</em></h1>
             <p class="hero-copy">경험 많은 세무사의 검토로<br>더 정확한 세금 신고</p>
             <div class="hero-actions">
               <a class="btn-ghost" href="vatax.html">부가세 신고</a>
               <a class="btn-ghost" href="gitax.html">종합소득세 신고</a>
-              <a class="btn-ghost" href="https://tax-cook.com/office">창업컨설팅/기장상담</a>
             </div>
             <div class="hero-trust" aria-label="서비스 특징">
               <span>온라인 접수</span>
               <span>전문가 검토</span>
               <span>상담 연결</span>
             </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <img src="image/hero-taxcook-main-transparent-circle-20260502.png" alt="">
           </div>
         </div>
       </section>
@@ -95,7 +109,7 @@
               <span class="svc-icon"><img src="image/icon-service-vat-20260430.png" alt="" aria-hidden="true"></span>
               <div>
                 <h3>부가세 신고</h3>
-                <p>신고 대상 확인부터 제출까지 한 번에</p>
+                <p>부가세 빠르고 간편한 제출</p>
               </div>
               <a href="vatax.html" aria-label="부가세 신고 시작">부가세 신고 시작</a>
             </article>
@@ -103,17 +117,9 @@
               <span class="svc-icon"><img src="image/icon-service-gitax-20260430.png" alt="" aria-hidden="true"></span>
               <div>
                 <h3>종합소득세 신고</h3>
-                <p>5월 신고 대상 여부를 확인해보세요</p>
+                <p>종소세 빠르고 간편한 제출</p>
               </div>
               <a href="gitax.html" aria-label="종합소득세 신고 시작">종소세 신고 시작</a>
-            </article>
-            <article class="svc-card reveal">
-              <span class="svc-icon"><img src="image/icon-service-office-20260430.png" alt="" aria-hidden="true"></span>
-              <div>
-                <h3>창업컨설팅/기장상담</h3>
-                <p>신규 창업 컨설팅 및 기장 상담 신청</p>
-              </div>
-              <a href="https://tax-cook.com/office" aria-label="창업컨설팅 및 기장상담 신청">상담 신청</a>
             </article>
           </div>
         </div>
@@ -129,22 +135,22 @@
           <div class="steps-grid">
             <article class="step-card reveal">
               <span>1</span>
-              <strong>신고 유형 선택</strong>
+              <strong>1. 신고 유형 선택</strong>
               <p>부가세, 종합소득세, 사업자 등록 등<br>필요한 메뉴를 선택합니다</p>
             </article>
             <article class="step-card reveal">
               <span>2</span>
-              <strong>기본 정보 입력</strong>
+              <strong>2. 기본 정보 입력</strong>
               <p>신청 페이지에서<br>진행에 필요한 정보를 남깁니다</p>
             </article>
             <article class="step-card reveal">
               <span>3</span>
-              <strong>자료 확인</strong>
+              <strong>3. 자료 확인</strong>
               <p>전문 세무팀이 자료를 확인하고<br>누락 항목을 안내합니다</p>
             </article>
             <article class="step-card reveal">
               <span>4</span>
-              <strong>신고 진행</strong>
+              <strong>4. 신고 진행</strong>
               <p>검토 후 신고 절차와<br>결과 안내까지 이어서 진행합니다</p>
             </article>
           </div>
@@ -206,7 +212,6 @@
                 <select name="service" required>
                   <option value="vatax.html">부가가치세 신고</option>
                   <option value="gitax.html">종합소득세 신고</option>
-                  <option value="https://tax-cook.com/office">창업컨설팅/기장상담</option>
                   <option value="mypage.html">로그인 / My 택스쿡</option>
                 </select>
               </label>
@@ -252,17 +257,16 @@
           <a href="mypage.html">My 택스쿡</a>
           <a href="vatax.html">부가가치세 신고</a>
           <a href="gitax.html">종합소득세 신고</a>
-          <a href="https://tax-cook.com/office">창업 컨설팅·기장 상담</a>
-          <a href="https://tax-cook.com/doc1">이용약관</a>
-          <a href="https://tax-cook.com/doc2">개인정보처리방침</a>
+          <a href="https://taxcook.co.kr/doc1">이용약관</a>
+          <a href="https://taxcook.co.kr/doc2">개인정보처리방침</a>
         </div>
       </div>
       <p class="copyright">© 2026 스마일택스. All rights reserved.</p>
     </footer>
 
     <div class="mobile-sticky-cta" aria-label="모바일 빠른 이동">
-      <a href="/">홈으로</a>
-      <a href="mypage.html">My 택스쿡</a>
+      <a href="vatax.html">부가세</a>
+      <a href="gitax.html">종합소득세</a>
     </div>
   </body>
 </html>

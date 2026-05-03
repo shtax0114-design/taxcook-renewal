@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "taxcook-vat": {
+      "hosting": {
+        "taxcook-renewal": [
+          "taxcook-renewal"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

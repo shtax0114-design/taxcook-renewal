@@ -1,0 +1,35 @@
+.ops-admin-page {
+  --admin-workspace-width: 1440px;
+}
+
+.ops-admin-page .ops-title-bar,
+.ops-admin-page .admin-legacy-menu,
+.ops-admin-page .admin-accent-bar,
+.ops-admin-page .ops-toolbar,
+.ops-admin-page [data-admin-panel],
+.ops-admin-page .ops-table-wrap {
+  width: var(--admin-workspace-width);
+  min-width: var(--admin-workspace-width);
+  max-width: var(--admin-workspace-width);
+}
+
+.ops-admin-page .admin-detail-dropdown-row > td {
+  width: auto !important;
+  min-width: var(--admin-workspace-width) !important;
+  max-width: none !important;
+  padding-right: 0;
+  overflow: visible;
+}
+
+.ops-admin-page .admin-detail-dropdown {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.ops-admin-page .admin-detail-frame {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  overflow: visible;
+}

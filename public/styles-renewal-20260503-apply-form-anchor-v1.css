@@ -1,0 +1,9 @@
+#apply-form {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 720px) {
+  #apply-form {
+    scroll-margin-top: 92px;
+  }
+}

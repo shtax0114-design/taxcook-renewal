@@ -1,0 +1,27 @@
+.sub-hero {
+  padding-bottom: 12px;
+}
+
+.fee-section {
+  padding-top: 24px;
+}
+
+@media (max-width: 920px) {
+  .sub-hero {
+    padding-bottom: 8px;
+  }
+
+  .fee-section {
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .sub-hero {
+    padding-bottom: 0;
+  }
+
+  .fee-section {
+    padding-top: 14px;
+  }
+}

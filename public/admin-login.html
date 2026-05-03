@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>관리자 로그인 | 택스쿡</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="styles-renewal-20260502-admin-login-v1.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="site-renewal-20260501-supabase-config.js"></script>
+    <script defer src="site-renewal-20260502-supabase-core-v8.js"></script>
+    <script defer src="site-renewal-20260502-admin-login-v2.js"></script>
+  </head>
+  <body class="admin-login-page">
+    <main class="admin-login-shell">
+      <section class="admin-login-card" aria-labelledby="admin-login-title">
+        <div class="admin-login-brand">
+          <img src="image/logo-taxcook-20260430-kong-crop.png" alt="택스쿡">
+          <span>Web Administrator</span>
+        </div>
+        <h1 id="admin-login-title">관리자 로그인</h1>
+        <p>택스쿡 관리자 권한이 있는 계정으로 로그인해 주세요.</p>
+        <form class="admin-login-form" data-admin-login-form>
+          <label>
+            <span>로그인ID</span>
+            <input type="text" name="loginId" autocomplete="username" required>
+          </label>
+          <label>
+            <span>비밀번호</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+          </label>
+          <button type="submit">로그인</button>
+        </form>
+        <p class="admin-login-message" data-admin-login-message hidden></p>
+        <a class="admin-login-home" href="/">홈으로 돌아가기</a>
+      </section>
+    </main>
+  </body>
+</html>

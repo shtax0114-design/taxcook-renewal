@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://tax-cook.com/sitemap.xml
+Sitemap: https://taxcook.co.kr/sitemap.xml
